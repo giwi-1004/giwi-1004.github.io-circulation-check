@@ -10,6 +10,7 @@ import { CtaCheckSection } from "@/components/landing/cta-check-section"
 import { CheckQuestionsSection } from "@/components/landing/check-questions-section"
 import { ResultSection } from "@/components/landing/result-section"
 import { ApplicationFormSection } from "@/components/landing/application-form-section"
+import { KakaoInquirySection } from "@/components/landing/kakao-inquiry-section"
 import { FAQSection } from "@/components/landing/faq-section"
 import { SuccessModal } from "@/components/landing/success-modal"
 
@@ -72,7 +73,10 @@ export default function LandingPage() {
       {/* 9. 신청 폼 */}
       <ApplicationFormSection onSubmit={handleFormSubmit} />
       
-      {/* 10. FAQ */}
+      {/* 10. 카카오톡 1:1 문의 */}
+      <KakaoInquirySection />
+
+      {/* 11. FAQ */}
       <FAQSection />
 
       {/* Footer */}
