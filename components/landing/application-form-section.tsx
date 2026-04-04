@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { PRIVACY_CONSENT_FULL_TEXT } from "@/lib/privacy-consent-full-text"
+import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
 
 interface ApplicationFormSectionProps {
   onSubmit: (name: string, phone: string) => void
@@ -37,7 +38,6 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
     }
 
     setIsSubmitting(true)
-    // Simulate submission
     await new Promise((resolve) => setTimeout(resolve, 500))
     onSubmit(name, phone)
     setIsSubmitting(false)
@@ -59,14 +59,14 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
   return (
     <section
       id="application-form"
-      className="bg-secondary px-4 py-10 sm:px-5 sm:py-12"
+      className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="text-[20px] font-bold text-foreground mb-2 leading-[1.4]">
+        <h2 className="mb-2 text-[20px] font-bold leading-[1.4] text-foreground">
           무료 확인 요청
         </h2>
-        
-        <p className="text-[14px] text-muted-foreground mb-6 leading-relaxed">
+
+        <p className="mb-6 text-[14px] leading-relaxed text-muted-foreground">
           보험 가입 권유가 아닌
           <br />
           현재 보장 확인 목적입니다
@@ -74,7 +74,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-[14px] font-medium text-foreground mb-2">
+            <label htmlFor="name" className="mb-2 block text-[14px] text-foreground">
               이름
             </label>
             <Input
@@ -86,12 +86,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                 setFormError("")
                 setName(e.target.value)
               }}
-              className="h-12 text-[16px] rounded-xl"
+              className="h-12 rounded-[12px] text-[16px]"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-[14px] font-medium text-foreground mb-2">
+            <label htmlFor="phone" className="mb-2 block text-[14px] text-foreground">
               전화번호
             </label>
             <Input
@@ -100,7 +100,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               placeholder="010-0000-0000"
               value={phone}
               onChange={handlePhoneChange}
-              className="h-12 text-[16px] rounded-xl"
+              className="h-12 rounded-[12px] text-[16px]"
               maxLength={13}
             />
           </div>
@@ -118,7 +118,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                     setFormError("")
                     setPrivacyAgreed(v === true)
                   }}
-                  className="mt-0.5"
+                  className="mt-0.5 border-[#E5E7EB] data-[state=checked]:border-[#2563EB] data-[state=checked]:bg-[#2563EB]"
                 />
                 <span className="text-left text-[14px] leading-relaxed text-foreground">
                   [필수] 개인정보 수집 및 이용에 동의합니다
@@ -126,7 +126,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               </label>
               <button
                 type="button"
-                className="shrink-0 text-[14px] font-medium text-primary underline-offset-4 hover:underline"
+                className="shrink-0 text-[14px] font-medium text-[#6B7280] underline-offset-4 hover:underline"
                 aria-expanded={privacyDetailOpen}
                 onClick={() => setPrivacyDetailOpen((o) => !o)}
               >
@@ -159,7 +159,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
           <Button
             type="submit"
             disabled={isSubmitting || !privacyAgreed}
-            className="h-12 w-full rounded-xl text-[16px] font-bold shadow-[0px_4px_12px_rgba(0,0,0,0.1)] bg-primary hover:bg-primary/90 text-primary-foreground disabled:pointer-events-none disabled:opacity-50"
+            className={cn(LANDING_CTA_BUTTON_CLASS)}
           >
             {isSubmitting ? "요청 중..." : "보상 가능성 확인하기"}
           </Button>

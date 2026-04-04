@@ -6,19 +6,19 @@ import importanceIllustration from "./importance-illustration.png"
 
 export function ImportanceSection() {
   return (
-    <section className="px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="text-[20px] font-bold text-foreground mb-2 leading-[1.4]">
+        <h2 className="mb-2 text-[20px] font-bold leading-[1.4] text-foreground">
           순환계 질환은
           <br />
           생각보다 흔하게 발생합니다
         </h2>
-        
-        <p className="text-[15px] text-muted-foreground leading-relaxed mb-3">
-          그리고 문제는 <span className="text-foreground font-medium">치료비</span>입니다
+
+        <p className="mb-3 text-[15px] leading-relaxed text-muted-foreground">
+          그리고 문제는 <span className="font-medium text-foreground">치료비</span>입니다
         </p>
 
-        <div className="relative w-full h-40 rounded-xl overflow-hidden">
+        <div className="relative h-40 w-full overflow-hidden rounded-xl">
           <Image
             src={importanceIllustration}
             alt="두통으로 고통스러워하는 여성"

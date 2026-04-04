@@ -1,6 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
 
 interface CtaCheckSectionProps {
   onCtaClick: () => void
@@ -8,15 +10,15 @@ interface CtaCheckSectionProps {
 
 export function CtaCheckSection({ onCtaClick }: CtaCheckSectionProps) {
   return (
-    <section className="bg-accent/5 px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#F7F7F7] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px] text-center">
-        <p className="text-[15px] text-foreground leading-relaxed mb-6">
+        <p className="mb-6 text-[15px] leading-relaxed text-foreground">
           1분이면, 상담 없이 확인 가능합니다
         </p>
 
         <Button
           onClick={onCtaClick}
-          className="h-[44.8px] w-full rounded-[9.6px] text-[13px] font-bold shadow-[0px_3.2px_9.6px_rgba(0,0,0,0.1)] bg-primary hover:bg-primary/90 text-primary-foreground"
+          className={cn(LANDING_CTA_BUTTON_CLASS)}
         >
           내 보험 체크하기
         </Button>

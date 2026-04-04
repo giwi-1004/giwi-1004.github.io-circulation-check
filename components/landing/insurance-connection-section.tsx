@@ -2,13 +2,12 @@
 
 export function InsuranceConnectionSection() {
   return (
-    <section className="px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px] space-y-3 text-[15px] font-normal leading-relaxed text-foreground">
         <p>
           문제는
           <br />
-          기존 보험처럼{" "}
-          <span className="font-semibold text-accent">진단금·수술비만으로는</span>
+          기존 보험처럼 진단금·수술비만으로는
         </p>
         <p>
           실제 치료 과정에서 발생하는 비용을
@@ -18,7 +17,7 @@ export function InsuranceConnectionSection() {
         <p>
           순환계 주요치료비 보장은
           <br />
-          <span className="font-semibold text-accent">
+          <span className="font-semibold text-[#C2410C]">
             치료 내용에 따라 보험금이 지급되는 구조로
           </span>
         </p>

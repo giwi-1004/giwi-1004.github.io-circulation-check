@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 
+import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
+
 interface HeroSectionProps {
   onCtaClick: () => void
 }
@@ -13,12 +15,10 @@ interface HeroSectionProps {
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
     <section
-      className="box-border w-full min-w-0 max-w-[720px] bg-[#FFFFFF] text-left sm:mx-auto"
+      className="box-border w-full min-w-0 max-w-[720px] bg-[#FFFFFF] px-5 py-10 text-left sm:mx-auto"
       style={{
-        paddingTop: "calc(32px + env(safe-area-inset-top, 0px))",
-        paddingBottom: "calc(20px + env(safe-area-inset-bottom, 0px))",
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingTop: "max(40px, calc(32px + env(safe-area-inset-top, 0px)))",
+        paddingBottom: "max(40px, calc(20px + env(safe-area-inset-bottom, 0px)))",
       }}
     >
       <h1 className="m-0 text-left font-normal">
@@ -28,7 +28,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         <span className="mt-px block text-base font-normal leading-[1.3] text-[#6B7280]">
           하지만
         </span>
-        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#193695]">
+        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
           뇌·심장 치료비는 빠져 있는 경우가 많습니다
         </span>
         <span className="mt-px block text-sm font-normal leading-[1.3] text-[#939aa8]">
@@ -50,7 +50,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       <button
         type="button"
         onClick={onCtaClick}
-        className="mx-auto mt-3 box-border flex h-[40.3px] w-[72%] min-w-0 shrink-0 touch-manipulation items-center justify-center rounded-[8.6px] border-0 bg-[#295ccb] p-0 text-center text-[13px] font-bold leading-none text-white shadow-[0_1.44px_4.32px_rgba(41,92,203,0.12)] transition-[transform,filter] duration-100 hover:brightness-[1.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295ccb] active:scale-[0.97]"
+        className={`${LANDING_CTA_BUTTON_CLASS} mx-auto w-[72%] min-w-0 shrink-0 touch-manipulation`}
       >
         빠진 보장 확인하기
       </button>

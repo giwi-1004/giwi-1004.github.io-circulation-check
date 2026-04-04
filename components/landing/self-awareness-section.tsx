@@ -13,19 +13,19 @@ const checkItems = [
 
 export function SelfAwarenessSection() {
   return (
-    <section className="bg-secondary px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#F7F7F7] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="text-center text-[20px] font-bold text-foreground mb-6 leading-[1.4]">
+        <h2 className="mb-6 text-center text-[20px] font-bold leading-[1.4] text-foreground">
           혹시 이런 경험 있으신가요?
         </h2>
-        
+
         <ul className="space-y-4">
           {checkItems.map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-3 h-3 text-primary" />
+              <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#93C5FD]/25">
+                <Check className="h-3 w-3 text-[#93C5FD]" strokeWidth={2.5} />
               </div>
-              <span className="text-[15px] text-foreground leading-relaxed">
+              <span className="text-[15px] leading-relaxed text-foreground">
                 {item}
               </span>
             </li>

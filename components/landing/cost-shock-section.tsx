@@ -20,18 +20,24 @@ const costItems = [
 
 export function CostShockSection() {
   return (
-    <section className="bg-secondary px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#F7F7F7] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
         <div className="grid grid-cols-1 gap-4">
           {costItems.map((item, index) => (
             <div
               key={index}
-              className="bg-background rounded-xl border border-border p-5"
+              className="group rounded-[12px] border border-[#E5E7EB] border-l-4 border-l-[#2563EB] bg-[#FFFFFF] p-5 transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
             >
-              <p className="mb-2 text-[14px] text-muted-foreground leading-snug">
+              <p className="mb-2 text-[14px] leading-snug text-muted-foreground">
                 {item.title}
               </p>
-              <p className="mb-2 text-[18px] font-bold leading-snug text-accent">
+              <p
+                className={
+                  index === 0
+                    ? "mb-2 text-[18px] font-bold leading-snug text-[#C2410C]"
+                    : "mb-2 text-[18px] font-semibold leading-snug text-[#C2410C]"
+                }
+              >
                 <span className="mr-1.5 inline-block" aria-hidden>
                   👉
                 </span>

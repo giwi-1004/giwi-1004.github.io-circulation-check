@@ -27,33 +27,34 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-secondary px-4 py-10 sm:px-5 sm:py-12">
+    <section className="bg-[#F9FAFB] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="text-[20px] font-bold text-foreground mb-6 leading-[1.4]">
+        <h2 className="mb-6 text-[20px] font-semibold leading-[1.4] text-[#6B7280]">
           자주 묻는 질문
         </h2>
-        
+
         <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-background rounded-xl border border-border overflow-hidden"
+              className="overflow-hidden rounded-[12px] border border-[#E5E7EB] bg-[#FFFFFF]"
             >
               <button
+                type="button"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full p-4 flex items-center justify-between text-left"
+                className="flex w-full items-center justify-between p-4 text-left"
               >
-                <span className="text-[15px] font-medium text-foreground pr-4">
+                <span className="pr-4 text-[15px] font-medium text-[#6B7280]">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={cn(
-                    "w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform",
+                    "h-5 w-5 shrink-0 text-[#6B7280] transition-transform",
                     openIndex === index && "rotate-180"
                   )}
                 />
               </button>
-              
+
               <div
                 className={cn(
                   "grid transition-all duration-200",
@@ -61,7 +62,7 @@ export function FAQSection() {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="px-4 pb-4 text-[14px] text-muted-foreground leading-relaxed">
+                  <p className="px-4 pb-4 text-[14px] leading-relaxed text-[#6B7280]">
                     {faq.answer}
                   </p>
                 </div>

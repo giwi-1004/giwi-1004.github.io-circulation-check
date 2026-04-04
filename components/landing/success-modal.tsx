@@ -2,6 +2,8 @@
 
 import { CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 
 interface SuccessModalProps {
   isOpen: boolean
@@ -16,26 +18,28 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
       <div
         className="absolute inset-0 bg-foreground/50 backdrop-blur-sm"
         onClick={onClose}
+        onKeyDown={(e) => e.key === "Escape" && onClose()}
+        role="presentation"
       />
 
       <div className="relative max-h-[min(90dvh,calc(100dvh-2rem))] w-full max-w-sm overflow-y-auto rounded-2xl bg-background p-6 text-center shadow-xl sm:p-8">
-        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-8 h-8 text-green-600" />
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#93C5FD]/25">
+          <CheckCircle className="h-8 w-8 text-[#93C5FD]" strokeWidth={2} />
         </div>
-        
-        <h3 className="text-[20px] font-bold text-foreground mb-2">
+
+        <h3 className="mb-2 text-[20px] font-bold text-foreground">
           요청이 완료되었습니다
         </h3>
-        
-        <p className="text-[15px] text-muted-foreground mb-6 leading-relaxed">
+
+        <p className="mb-6 text-[15px] leading-relaxed text-muted-foreground">
           입력하신 번호로
           <br />
           빠른 시일 내 연락드리겠습니다
         </p>
-        
+
         <Button
           onClick={onClose}
-          className="h-[38.4px] w-full rounded-[9.6px] text-[13px] font-medium bg-primary hover:bg-primary/90 text-primary-foreground"
+          className={cn(LANDING_CTA_BUTTON_BASE, "my-6")}
         >
           확인
         </Button>
