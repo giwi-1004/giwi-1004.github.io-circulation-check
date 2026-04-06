@@ -7,9 +7,11 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { PRIVACY_CONSENT_FULL_TEXT } from "@/lib/privacy-consent-full-text"
 import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
+import { normalizeKoreanPhoneToDigits } from "@/lib/normalize-kr-phone"
 
 interface ApplicationFormSectionProps {
-  onSubmit: (name: string, phone: string) => void
+  /** 서버 저장 성공 후 호출 (개인정보는 콜백으로 넘기지 않음) */
+  onSubmit: () => void
 }
 
 export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps) {
@@ -31,16 +33,30 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
       setFormError("이름과 전화번호를 모두 입력해주세요.")
       return
     }
-    const phoneDigits = phone.replace(/\D/g, "")
+    const phoneDigits = normalizeKoreanPhoneToDigits(phone)
     if (phoneDigits.length < 10 || phoneDigits.length > 11) {
       setFormError("전화번호를 올바르게 입력해주세요.")
       return
     }
 
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 500))
-    onSubmit(name, phone)
-    setIsSubmitting(false)
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name.trim(), phone: phone.trim() }),
+      })
+      const data = (await res.json().catch(() => ({}))) as { message?: string }
+      if (!res.ok) {
+        setFormError(data.message ?? "저장에 실패했습니다. 잠시 후 다시 시도해주세요.")
+        return
+      }
+      onSubmit()
+    } catch {
+      setFormError("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const formatPhoneNumber = (value: string) => {
@@ -101,7 +117,9 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               value={phone}
               onChange={handlePhoneChange}
               className="h-12 rounded-[12px] border-[#B7B9BC] text-[16px]"
-              maxLength={13}
+              maxLength={22}
+              inputMode="tel"
+              autoComplete="tel"
             />
           </div>
 

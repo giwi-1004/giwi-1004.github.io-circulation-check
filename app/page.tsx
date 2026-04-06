@@ -34,8 +34,7 @@ export default function LandingPage() {
     }, 100)
   }
 
-  const handleFormSubmit = (name: string, phone: string) => {
-    console.log("Form submitted:", { name, phone })
+  const handleFormSubmit = () => {
     setShowSuccessModal(true)
   }
 
