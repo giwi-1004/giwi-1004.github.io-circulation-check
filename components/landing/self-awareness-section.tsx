@@ -15,7 +15,7 @@ export function SelfAwarenessSection() {
   return (
     <section className="bg-[#F7F7F7] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-6 text-center text-[20px] font-bold leading-[1.4] text-foreground">
+        <h2 className="mb-6 text-left text-[20px] font-bold leading-[1.4] text-foreground">
           혹시 이런 경험 있으신가요?
         </h2>
 
@@ -25,7 +25,7 @@ export function SelfAwarenessSection() {
               <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#93C5FD]/25">
                 <Check className="h-3 w-3 text-[#93C5FD]" strokeWidth={2.5} />
               </div>
-              <span className="text-[15px] leading-relaxed text-foreground">
+              <span className="text-[15px] font-[480] leading-relaxed text-foreground">
                 {item}
               </span>
             </li>

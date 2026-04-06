@@ -3,7 +3,7 @@
 export function InsuranceConnectionSection() {
   return (
     <section className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10">
-      <div className="mx-auto min-w-0 max-w-[720px] space-y-3 text-[15px] font-normal leading-relaxed text-foreground">
+      <div className="mx-auto min-w-0 max-w-[720px] space-y-3 text-[16.5px] font-normal leading-relaxed text-foreground">
         <p>
           문제는
           <br />

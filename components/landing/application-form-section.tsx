@@ -59,7 +59,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
   return (
     <section
       id="application-form"
-      className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10"
+      className="bg-[#F2F2F2] px-5 py-10 sm:px-5 sm:py-10"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
         <h2 className="mb-2 text-[20px] font-bold leading-[1.4] text-foreground">

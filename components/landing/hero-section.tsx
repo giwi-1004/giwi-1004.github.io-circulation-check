@@ -22,16 +22,16 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       }}
     >
       <h1 className="m-0 text-left font-normal">
-        <span className="block text-base font-normal leading-[1.3] text-[#6B7280]">
+        <span className="block text-[1.1rem] font-[440] leading-[1.3] text-[#606773]">
           보험은 다들 있습니다
         </span>
-        <span className="mt-px block text-base font-normal leading-[1.3] text-[#6B7280]">
+        <span className="mt-px block text-[1.1rem] font-[440] leading-[1.3] text-[#606773]">
           하지만
         </span>
         <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
           뇌·심장 치료비는 빠져 있는 경우가 많습니다
         </span>
-        <span className="mt-px block text-sm font-normal leading-[1.3] text-[#939aa8]">
+        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
           내 보험에 있는지 1분 안에 확인해보세요
         </span>
       </h1>
