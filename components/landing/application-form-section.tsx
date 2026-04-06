@@ -86,7 +86,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                 setFormError("")
                 setName(e.target.value)
               }}
-              className="h-12 rounded-[12px] text-[16px]"
+              className="h-12 rounded-[12px] border-[#B7B9BC] text-[16px]"
             />
           </div>
 
@@ -100,7 +100,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               placeholder="010-0000-0000"
               value={phone}
               onChange={handlePhoneChange}
-              className="h-12 rounded-[12px] text-[16px]"
+              className="h-12 rounded-[12px] border-[#B7B9BC] text-[16px]"
               maxLength={13}
             />
           </div>
@@ -118,7 +118,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                     setFormError("")
                     setPrivacyAgreed(v === true)
                   }}
-                  className="mt-0.5 border-[#E5E7EB] data-[state=checked]:border-[#2563EB] data-[state=checked]:bg-[#2563EB]"
+                  className="mt-0.5 border-[#A5A7A9] data-[state=checked]:border-[#2563EB] data-[state=checked]:bg-[#2563EB]"
                 />
                 <span className="text-left text-[14px] leading-relaxed text-foreground">
                   [필수] 개인정보 수집 및 이용에 동의합니다

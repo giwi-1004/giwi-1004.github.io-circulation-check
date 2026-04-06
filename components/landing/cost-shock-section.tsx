@@ -26,7 +26,7 @@ export function CostShockSection() {
           {costItems.map((item, index) => (
             <div
               key={index}
-              className="group rounded-[12px] border border-[#E5E7EB] bg-[#E0E0E0] p-5 transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+              className="group rounded-[12px] border border-[#E5E7EB] bg-[#F0F0F0] p-5 transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
             >
               <p className="mb-2 text-[14px] leading-snug text-[#525252]">
                 {item.title}
@@ -38,9 +38,6 @@ export function CostShockSection() {
                     : "mb-2 text-[18px] font-semibold leading-snug text-[#9B340A]"
                 }
               >
-                <span className="mr-1.5 inline-block" aria-hidden>
-                  👉
-                </span>
                 {item.costHighlight}
               </p>
               <p className="text-[14px] leading-relaxed text-[#525252]">

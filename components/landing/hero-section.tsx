@@ -22,10 +22,10 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       }}
     >
       <h1 className="m-0 text-left font-normal">
-        <span className="block text-[1.1rem] font-[440] leading-[1.3] text-[#606773]">
+        <span className="block text-[1.045rem] font-[440] leading-[1.3] text-[#606773]">
           보험은 다들 있습니다
         </span>
-        <span className="mt-px block text-[1.1rem] font-[440] leading-[1.3] text-[#606773]">
+        <span className="mt-px block text-[1.045rem] font-[440] leading-[1.3] text-[#606773]">
           하지만
         </span>
         <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
