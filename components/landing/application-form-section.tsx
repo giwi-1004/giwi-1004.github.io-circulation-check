@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { PRIVACY_CONSENT_FULL_TEXT } from "@/lib/privacy-consent-full-text"
 import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
 import { normalizeKoreanPhoneToDigits } from "@/lib/normalize-kr-phone"
+import { submitLandingLead } from "@/lib/submit-landing-lead"
 
 interface ApplicationFormSectionProps {
   /** 서버 저장 성공 후 호출 (개인정보는 콜백으로 넘기지 않음) */
@@ -41,19 +42,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
 
     setIsSubmitting(true)
     try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), phone: phone.trim() }),
-      })
-      const data = (await res.json().catch(() => ({}))) as { message?: string }
-      if (!res.ok) {
-        setFormError(data.message ?? "저장에 실패했습니다. 잠시 후 다시 시도해주세요.")
+      const result = await submitLandingLead(name, phone)
+      if (!result.ok) {
+        setFormError(result.message)
         return
       }
       onSubmit()
-    } catch {
-      setFormError("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.")
     } finally {
       setIsSubmitting(false)
     }

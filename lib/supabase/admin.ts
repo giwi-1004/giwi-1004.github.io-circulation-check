@@ -1,10 +1,10 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js"
 
 /**
- * 서버 전용. SUPABASE_SERVICE_ROLE_KEY 는 브라우저에 노출하면 안 됩니다.
+ * 서버 전용. Secret / service_role 키는 브라우저에 넣지 마세요 (NEXT_PUBLIC_ 금지).
  *
- * URL: SUPABASE_URL 또는 NEXT_PUBLIC_SUPABASE_URL (둘 중 하나)
- * 키: SUPABASE_SERVICE_ROLE_KEY (Project Settings → API → service_role secret)
+ * URL: SUPABASE_URL(권장) 또는 NEXT_PUBLIC_SUPABASE_URL
+ * 키: SUPABASE_SERVICE_ROLE_KEY — 대시보드의 Secret(sb_secret_…) 또는 JWT service_role
  */
 export function getSupabaseAdmin(): SupabaseClient {
   const url =

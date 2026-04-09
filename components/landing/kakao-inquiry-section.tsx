@@ -5,7 +5,7 @@ import { CircleCheck, MessageCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 /** QR 이미지와 동일한 오픈채팅 링크. `NEXT_PUBLIC_KAKAO_CHAT_URL`로 덮어쓸 수 있습니다. */
-const DEFAULT_KAKAO_CHAT_URL = "https://open.kakao.com/o/s9X6Fm7g"
+const DEFAULT_KAKAO_CHAT_URL = "https://open.kakao.com/o/scS4vMoi"
 
 const KAKAO_YELLOW = "#FEE500"
 const KAKAO_BROWN = "#3C1E1E"
