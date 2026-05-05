@@ -20,7 +20,7 @@ export function CtaCheckSection({ onCtaClick }: CtaCheckSectionProps) {
           onClick={onCtaClick}
           className={cn(LANDING_CTA_BUTTON_CLASS)}
         >
-          내 보험 체크하기
+          내 보험, 치료비 보장 구조 확인하기
         </Button>
       </div>
     </section>

@@ -98,7 +98,7 @@ export function KakaoInquirySection() {
               }}
             >
               <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={2.2} />
-              카카오로 내 상황 확인하기
+              무료로 보장 구조 확인하기
             </a>
           </div>
         </div>

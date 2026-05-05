@@ -2,10 +2,10 @@
 
 import { useState, useCallback } from "react"
 import { HeroSection } from "@/components/landing/hero-section"
-import { SelfAwarenessSection } from "@/components/landing/self-awareness-section"
 import { ImportanceSection } from "@/components/landing/importance-section"
 import { CostShockSection } from "@/components/landing/cost-shock-section"
-import { InsuranceConnectionSection } from "@/components/landing/insurance-connection-section"
+import { ProblemSection } from "@/components/landing/problem-section"
+import { SolutionStructureSection } from "@/components/landing/solution-structure-section"
 import { CtaCheckSection } from "@/components/landing/cta-check-section"
 import { CheckQuestionsSection } from "@/components/landing/check-questions-section"
 import { ResultSection } from "@/components/landing/result-section"
@@ -42,37 +42,37 @@ export default function LandingPage() {
     <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-background">
       {/* 1. Hero */}
       <HeroSection onCtaClick={() => scrollToSection("check-questions")} />
-      
-      {/* 2. 자기 인식 */}
-      <SelfAwarenessSection />
-      
-      {/* 3. 순환계 중요성 */}
-      <ImportanceSection />
-      
-      {/* 4. 비용 충격 */}
-      <CostShockSection />
-      
-      {/* 5. 보험 연결 */}
-      <InsuranceConnectionSection />
-      
-      {/* 6. CTA (체크 유도) */}
-      <CtaCheckSection onCtaClick={() => scrollToSection("check-questions")} />
-      
-      {/* 7. 체크 질문 */}
+
+      {/* 2. 선택 문항 (히어로 직후) */}
       <CheckQuestionsSection onComplete={handleCheckComplete} />
-      
-      {/* 8. 결과 페이지 */}
+
+      {/* 3. 비용 */}
+      <CostShockSection />
+
+      {/* 4. 문제 정의 */}
+      <ProblemSection />
+
+      {/* 5. 해결 구조 */}
+      <SolutionStructureSection />
+
+      {/* 6. 결과 (체크 완료 후 표시) */}
       {showResult && (
-        <ResultSection 
-          selectedCount={selectedCount} 
-          onCtaClick={() => scrollToSection("application-form")} 
+        <ResultSection
+          selectedCount={selectedCount}
+          onCtaClick={() => scrollToSection("application-form")}
         />
       )}
-      
-      {/* 9. 신청 폼 */}
+
+      {/* 7. 신청 폼 */}
       <ApplicationFormSection onSubmit={handleFormSubmit} />
-      
-      {/* 10. 카카오톡 1:1 문의 */}
+
+      {/* 8. 순환계 중요성 */}
+      <ImportanceSection />
+
+      {/* 9. CTA (문항으로 유도) */}
+      <CtaCheckSection onCtaClick={() => scrollToSection("check-questions")} />
+
+      {/* 10. 카카오 */}
       <KakaoInquirySection />
 
       {/* 11. FAQ */}
@@ -90,9 +90,9 @@ export default function LandingPage() {
       </footer>
 
       {/* Success Modal */}
-      <SuccessModal 
-        isOpen={showSuccessModal} 
-        onClose={() => setShowSuccessModal(false)} 
+      <SuccessModal
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
       />
     </main>
   )

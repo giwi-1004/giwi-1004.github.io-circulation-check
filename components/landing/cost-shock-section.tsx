@@ -2,19 +2,19 @@
 
 const costItems = [
   {
-    title: "스텐트 삽입술 (PCI)",
-    costHighlight: "최소 1,000만원 이상 발생",
-    note: "갑작스럽게 발생합니다",
+    title: "중환자실 치료",
+    costHighlight: "약 2,000만원 이상 발생",
+    note: "갑작스럽게 발생할 수 있습니다",
   },
   {
-    title: "심장 수술 (개심술 등)",
-    costHighlight: "최소 4,000만원 이상 발생",
-    note: "대부분 대비 없이 맞이합니다",
+    title: "체외순환 치료",
+    costHighlight: "약 1,000만원 이상 발생",
+    note: "예측하기 어렵습니다",
   },
   {
-    title: "뇌혈관 수술",
-    costHighlight: "최소 2,000만원 이상 발생",
-    note: "치료 이후 비용이 더 늘어납니다",
+    title: "혈전용해 치료",
+    costHighlight: "최대 2,500만원 발생",
+    note: "치료 상황에 따라 달라집니다",
   },
 ] as const
 
@@ -22,6 +22,11 @@ export function CostShockSection() {
   return (
     <section className="bg-[#F7F7F7] px-5 py-10 sm:px-5 sm:py-10">
       <div className="mx-auto min-w-0 max-w-[720px]">
+        <p className="mb-6 text-[16.5px] font-normal leading-relaxed text-foreground">
+          이런 상황이 발생하면
+          <br />
+          생각보다 큰 치료비가 발생합니다
+        </p>
         <div className="grid grid-cols-1 gap-4">
           {costItems.map((item, index) => (
             <div
@@ -41,10 +46,10 @@ export function CostShockSection() {
                 {item.costHighlight}
               </p>
               <p className="text-[14px] leading-relaxed text-[#525252]">
-                <span className="mr-1.5 inline-block text-[#474747]" aria-hidden>
+                <span className="mr-1.5 inline-block align-top text-[#474747]" aria-hidden>
                   →
                 </span>
-                {item.note}
+                <span className="inline-block whitespace-pre-line">{item.note}</span>
               </p>
             </div>
           ))}

@@ -73,14 +73,17 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
         <h2 className="mb-2 text-[20px] font-bold leading-[1.4] text-foreground">
-          무료 확인 요청
+          부담 없이 보장 구조만 먼저 확인해보세요
         </h2>
 
-        <p className="mb-6 text-[14px] leading-relaxed text-muted-foreground">
-          보험 가입 권유가 아닌
-          <br />
-          현재 보장 확인 목적입니다
-        </p>
+        <div className="mb-6 space-y-3 text-[14px] leading-relaxed text-muted-foreground">
+          <p>
+            보험 가입 권유가 아니라
+            <br />
+            현재 보장 구조 확인 목적입니다
+          </p>
+          <p>전화 상담을 강요하지 않습니다</p>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -173,8 +176,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             disabled={isSubmitting || !privacyAgreed}
             className={cn(LANDING_CTA_BUTTON_CLASS)}
           >
-            {isSubmitting ? "요청 중..." : "보상 가능성 확인하기"}
+            {isSubmitting ? "요청 중..." : "무료로 보장 구조 확인하기"}
           </Button>
+
+          <p className="text-center text-[12px] leading-relaxed text-muted-foreground">
+            입력하신 정보는 보장 확인 및 안내 목적에만 사용됩니다
+          </p>
         </form>
       </div>
     </section>

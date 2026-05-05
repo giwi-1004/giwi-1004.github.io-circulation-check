@@ -5,11 +5,12 @@ import { cn } from "@/lib/utils"
 import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
 
 const questions = [
-  "보험 가입 후 5년 이상 점검하지 않음",
-  "심장·뇌 보장 여부를 정확히 모름",
-  "가입한 특약 내용을 제대로 모름",
-  "가족력 또는 건강 문제가 있어 걱정됨",
-  "보험료 대비 보장이 적절한지 모름",
+  "최근 어지럼이나 두통을 자주 느낀 적이 있다",
+  "가슴이 답답하거나 통증을 느낀 적이 있다",
+  "숨이 차거나 두근거린 적이 있다",
+  "가족 중 뇌·심장 질환을 겪은 사람이 있다",
+  "내 보험에 치료비 보장이 있는지 모른다",
+  "보험은 있지만 보장 구조를 확인해본 적이 없다",
 ]
 
 interface CheckQuestionsSectionProps {
@@ -43,10 +44,12 @@ export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps
           <span>
             내 보험,
             <br />
-            <span className="font-bold">제대로 준비되어 있을까요?</span>
+            <span className="font-bold">치료비까지 준비되어 있을까요?</span>
           </span>
-          <span className="font-medium text-foreground">1분이면 확인 가능합니다</span>
-          <span>아래 항목 중 해당되는 내용을 선택해주세요</span>
+          <span>아래 항목 중 해당되는 내용을 선택해주세요.</span>
+          <span className="text-[15px] leading-relaxed text-[#6B7280]">
+            2개 이상 해당되면 보장 구조 확인이 필요할 수 있습니다.
+          </span>
         </h2>
 
         <div className="mb-6 space-y-3">
@@ -94,12 +97,6 @@ export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps
             </button>
           ))}
         </div>
-
-        <p className="mb-6 text-center text-[15.96px] leading-relaxed text-[#6B7280]">
-          <span className="font-medium">2개 이상 해당되면</span>
-          <br />
-          <span>보험 점검이 필요할 수 있습니다</span>
-        </p>
 
         <button
           type="button"

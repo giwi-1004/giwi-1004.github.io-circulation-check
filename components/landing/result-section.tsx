@@ -26,30 +26,44 @@ export function ResultSection({ selectedCount, onCtaClick }: ResultSectionProps)
         {needsCheck ? (
           <>
             <h2 className="mb-4 text-[22px] font-bold leading-[1.4] text-foreground">
-              순환계 보장 점검이
-              <br />
-              필요할 가능성이 있습니다
+              보장 구조 확인이 필요한 상태입니다
             </h2>
 
-            <p className="mb-8 text-[15px] leading-relaxed text-muted-foreground">
-              현재 보험 구조에 따라
-              <br />
-              보장이 부족할 수 있습니다
-            </p>
+            <div className="mb-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+              <p>현재 상태라면</p>
+              <p>치료비 대비가 부족할 가능성이 있습니다</p>
+              <p>
+                순환계 질환은
+                <br />
+                치료가 여러 번 이어질 수 있기 때문에
+              </p>
+              <p>
+                보험 구조에 따라
+                <br />
+                금액 차이가 발생할 수 있습니다
+              </p>
+              <p>
+                지금 확인하지 않으면
+                <br />
+                예상치 못한 비용 부담이 생길 수 있습니다
+              </p>
+            </div>
           </>
         ) : (
           <>
             <h2 className="mb-4 text-[22px] font-bold leading-[1.4] text-foreground">
-              현재 상태는 양호하지만
-              <br />
-              점검을 권장합니다
+              현재 상태는 양호할 수 있습니다
             </h2>
 
-            <p className="mb-8 text-[15px] leading-relaxed text-muted-foreground">
-              정확한 보장 내용을
-              <br />
-              확인해보시는 것이 좋습니다
-            </p>
+            <div className="mb-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+              <p>증상이 없더라도</p>
+              <p>보장 구조는 확인이 필요합니다</p>
+              <p>
+                내 보험이
+                <br />
+                치료 기준 보장인지 확인해보세요
+              </p>
+            </div>
           </>
         )}
 
@@ -57,7 +71,7 @@ export function ResultSection({ selectedCount, onCtaClick }: ResultSectionProps)
           onClick={onCtaClick}
           className={cn(LANDING_CTA_BUTTON_CLASS)}
         >
-          무료 확인하기
+          무료로 보장 구조 확인하기
         </Button>
       </div>
     </section>

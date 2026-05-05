@@ -8,10 +8,6 @@ interface HeroSectionProps {
   onCtaClick: () => void
 }
 
-/**
- * 모바일 375 기준 전환형 Hero — 단일 세로 플로우 (텍스트 → 이미지 → CTA).
- * min-height 100vh / space-between 미사용.
- */
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
     <section
@@ -22,17 +18,31 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       }}
     >
       <h1 className="m-0 text-left font-normal">
-        <span className="block text-[1.045rem] font-[440] leading-[1.3] text-[#606773]">
-          보험은 다들 있습니다
-        </span>
-        <span className="mt-px block text-[1.045rem] font-[440] leading-[1.3] text-[#606773]">
-          하지만
+        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
+          뇌·심장 혈관 질환은
         </span>
         <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
-          뇌·심장 치료비는 빠져 있는 경우가 많습니다
+          갑작스럽게 발생하고
+        </span>
+        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
+          수술이나 중환자실 치료로
+        </span>
+        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
+          수천만원 비용이 발생할 수 있습니다
         </span>
         <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
-          내 보험에 있는지 1분 안에 확인해보세요
+          보험은 있지만,
+        </span>
+        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
+          이 비용까지 대비되어 있는지는
+        </span>
+        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
+          구조를 확인해야 알 수 있습니다
+        </span>
+        <span className="mt-2 block text-[13px] font-[440] leading-relaxed text-[#9CA3AF]">
+          일반 질병수술 보장과는
+          <br />
+          구조가 다를 수 있습니다
         </span>
       </h1>
 
@@ -52,7 +62,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         onClick={onCtaClick}
         className={`${LANDING_CTA_BUTTON_CLASS} mx-auto w-[72%] min-w-0 shrink-0 touch-manipulation`}
       >
-        빠진 보장 확인하기
+        내 보험, 치료비 보장 구조 확인하기
       </button>
     </section>
   )
