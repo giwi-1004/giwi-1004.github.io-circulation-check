@@ -67,7 +67,7 @@ export default function LandingPage() {
       <FAQSection />
 
       {/* Footer */}
-      <footer className="border-t border-[#E5E7EB] bg-[#F7F7F7] px-4 py-8 sm:px-5 sm:py-10">
+      <footer className="border-t border-[#E5E7EB] bg-[#F7F7F7] px-4 py-6 sm:px-5 sm:py-10">
         <div className="mx-auto max-w-[720px] min-w-0 text-center">
           <p className="text-[13px] text-muted-foreground">
             본 페이지는 보험 상담 서비스를 안내하며,
