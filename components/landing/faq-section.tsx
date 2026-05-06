@@ -7,19 +7,24 @@ import { cn } from "@/lib/utils"
 const faqs = [
   {
     question: "정말 무료인가요?",
-    answer: "네, 보장 확인은 완전 무료입니다. 보험 가입 권유 없이 현재 보장 상태만 확인해드립니다.",
-  },
-  {
-    question: "어떤 서류가 필요한가요?",
-    answer: "보험증권이나 보험 앱 화면만 있으면 됩니다. 없으시면 보험사 조회를 도와드립니다.",
-  },
-  {
-    question: "상담 시간은 얼마나 걸리나요?",
-    answer: "전화 상담 기준 약 10~15분 정도 소요됩니다.",
+    answer: "네. 보장 구조 확인은 무료입니다.",
   },
   {
     question: "가입 권유를 받게 되나요?",
-    answer: "아니요. 현재 보장 상태 확인이 목적이며, 원하지 않으시면 추가 연락을 드리지 않습니다.",
+    answer: "원하지 않으시면 진행하지 않습니다.",
+  },
+  {
+    question: "무엇을 확인하나요?",
+    answer: "진단금 중심인지 치료비 구조인지 확인합니다.",
+  },
+  {
+    question: "기존 보험을 해지해야 하나요?",
+    answer:
+      "기존 보험 해지 여부와는 별개로,\n현재 보장 구조를 먼저 확인하는 과정입니다.",
+  },
+  {
+    question: "보험증권 없어도 되나요?",
+    answer: "가능합니다. 앱 화면으로도 확인 가능합니다.",
   },
 ]
 
@@ -27,24 +32,24 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-[#F9FAFB] px-5 py-10 sm:px-5 sm:py-10">
+    <section className="bg-[#F9FAFB] px-4 py-6 sm:px-5 sm:py-8">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-6 text-[20px] font-semibold leading-[1.4] text-[#6B7280]">
+        <h2 className="mb-5 text-[20px] font-semibold leading-[1.4] text-[#6B7280]">
           자주 묻는 질문
         </h2>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-[12px] border border-[#E5E7EB] bg-[#FFFFFF]"
+              className="overflow-hidden rounded-[11px] border border-[#E5E7EB] bg-[#FFFFFF]"
             >
               <button
                 type="button"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between p-4 text-left"
+                className="flex w-full items-center justify-between px-3.5 py-3 text-left sm:px-4 sm:py-3.5"
               >
-                <span className="pr-4 text-[15px] font-medium text-[#6B7280]">
+                <span className="pr-3 text-[15px] font-medium leading-snug text-[#6B7280]">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -62,7 +67,7 @@ export function FAQSection() {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="px-4 pb-4 text-[14px] leading-relaxed text-[#6B7280]">
+                  <p className="whitespace-pre-line px-3.5 pb-3 text-[14px] leading-relaxed text-[#6B7280] sm:px-4 sm:pb-3.5">
                     {faq.answer}
                   </p>
                 </div>

@@ -23,7 +23,7 @@ function KakaoBubbleIcon({ className }: { className?: string }) {
   )
 }
 
-const benefits = ["1:1 확인", "무료 검토", "빠른 답변"] as const
+const benefits = ["1:1 확인", "무료 확인", "빠른 답변"] as const
 
 export function KakaoInquirySection() {
   const chatUrl =
@@ -33,33 +33,35 @@ export function KakaoInquirySection() {
   return (
     <section
       id="kakao-inquiry"
-      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-5 py-8 sm:px-5 sm:py-10"
+      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 sm:px-5 sm:py-5"
     >
       <div className="mx-auto min-w-0 max-w-[576px]">
-        <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-4 py-5 shadow-sm sm:px-6 sm:py-6">
+        <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-3.5 py-3 shadow-sm sm:px-4 sm:py-4">
           <div className="flex flex-col items-center text-center">
             <div
-              className="mb-3 flex h-11 w-11 items-center justify-center rounded-full"
+              className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full sm:mb-2 sm:h-10 sm:w-10"
               style={{ backgroundColor: KAKAO_YELLOW }}
             >
-              <KakaoBubbleIcon className="h-6 w-6" />
+              <KakaoBubbleIcon className="h-[18px] w-[18px] sm:h-5 sm:w-5" />
             </div>
 
-            <h2 className="text-[16px] font-bold leading-snug text-[#1F2937]">
+            <h2 className="text-[15px] font-bold leading-snug text-[#1F2937] sm:text-[16px]">
               카카오톡 1:1 문의
             </h2>
-            <p className="mt-1.5 text-[11px] leading-relaxed text-[#6B7280] sm:text-[12px]">
-              전화보다 편하게 메시지 한 줄이면 가능합니다
+            <p className="mt-0.5 text-[11px] leading-snug text-[#6B7280] sm:mt-1 sm:text-[12px] sm:leading-relaxed">
+              전화보다 편하게
+              <br />
+              카카오톡으로 확인 가능합니다
             </p>
 
-            <ul className="mt-4 flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-1.5 sm:gap-x-5">
+            <ul className="mt-2 flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:mt-3 sm:gap-x-3">
               {benefits.map((label) => (
                 <li
                   key={label}
-                  className="flex items-center gap-1 text-[11px] font-medium text-[#374151] sm:text-[12px]"
+                  className="flex items-center gap-0.5 text-[11px] font-medium text-[#374151] sm:gap-1 sm:text-[12px]"
                 >
                   <CircleCheck
-                    className="h-3.5 w-3.5 shrink-0 text-[#CA8A04]"
+                    className="h-3 w-3 shrink-0 text-[#CA8A04] sm:h-3.5 sm:w-3.5"
                     strokeWidth={2.5}
                   />
                   {label}
@@ -67,17 +69,23 @@ export function KakaoInquirySection() {
               ))}
             </ul>
 
-            <div className="mt-5 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-3 py-4">
-              <p className="mb-2 text-[11px] font-medium text-[#6B7280] sm:text-[12px]">
+            <p className="mt-2 max-w-[320px] text-[11px] leading-relaxed text-[#6B7280] sm:mt-3 sm:text-[12px]">
+              가입 내역이 있다면
+              <br />
+              함께 보내주세요
+            </p>
+
+            <div className="mt-3 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-2.5 py-2 sm:mt-3 sm:px-3 sm:py-2.5">
+              <p className="mb-1 text-[11px] font-medium text-[#6B7280] sm:text-[12px]">
                 아래 QR코드를 스캔하세요
               </p>
-              <div className="mx-auto flex h-[160px] w-[160px] items-center justify-center rounded-lg bg-white">
+              <div className="mx-auto flex h-[118px] w-[118px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
                 <Image
                   src="/kakao-qr.png"
                   alt="카카오톡 오픈채팅 QR 코드"
-                  width={160}
-                  height={160}
-                  className="h-[160px] w-[160px] object-contain"
+                  width={124}
+                  height={124}
+                  className="h-[118px] w-[118px] object-contain sm:h-[122px] sm:w-[122px]"
                 />
               </div>
             </div>
@@ -87,7 +95,7 @@ export function KakaoInquirySection() {
               target={hasValidUrl ? "_blank" : undefined}
               rel={hasValidUrl ? "noopener noreferrer" : undefined}
               className={cn(
-                "mt-5 flex min-h-[42px] w-full max-w-[320px] items-center justify-center gap-1.5 rounded-[10px] px-3 text-[12px] font-bold text-[#3C1E1E] transition-[transform,opacity] active:scale-[0.99] sm:min-h-[44px] sm:text-[13px]",
+                "mt-2.5 flex min-h-[38px] w-full max-w-[320px] items-center justify-center gap-1.5 rounded-[10px] px-3 text-[12px] font-bold text-[#3C1E1E] transition-[transform,opacity] active:scale-[0.99] sm:mt-3 sm:min-h-[40px] sm:text-[13px]",
                 hasValidUrl
                   ? "shadow-[0_2px_6px_rgba(0,0,0,0.07)] hover:opacity-95"
                   : "cursor-not-allowed opacity-60"
@@ -98,7 +106,7 @@ export function KakaoInquirySection() {
               }}
             >
               <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={2.2} />
-              무료로 보장 구조 확인하기
+              카카오톡으로 간편하게 확인하기
             </a>
           </div>
         </div>
