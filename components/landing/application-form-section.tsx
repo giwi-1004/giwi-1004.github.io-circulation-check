@@ -69,24 +69,22 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
   return (
     <section
       id="application-form"
-      className="bg-[#F2F2F2] px-4 py-6 sm:px-5 sm:py-8"
+      className="bg-[#F2F2F2] px-4 py-5 sm:px-5 sm:py-8"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <div className="mb-4 sm:mb-5">
+        <div className="mb-3 sm:mb-5">
           <h2 className="m-0 text-[19px] font-bold leading-[1.28] tracking-tight text-foreground sm:text-[20px] sm:leading-[1.35]">
-            전화 상담 강요나 보험 가입 권유 없이,
+            상담 강요 없이
           </h2>
-          <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-[14px] sm:leading-relaxed">
-            현재 보장 구조만
-            <br />
-            객관적으로 확인해드립니다
+          <p className="mt-1 text-[13px] leading-[1.4] text-muted-foreground sm:mt-2 sm:text-[14px] sm:leading-relaxed">
+            편하게 확인하실 수 있습니다
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <div className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5">
             <div>
-              <label htmlFor="name" className="mb-1 block text-[13px] text-foreground sm:text-[14px]">
+              <label htmlFor="name" className="mb-0.5 block text-[13px] text-foreground sm:mb-1 sm:text-[14px]">
                 이름
               </label>
               <Input
@@ -98,12 +96,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                   setFormError("")
                   setName(e.target.value)
                 }}
-                className="h-11 min-h-[44px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px]"
+                className="h-10 min-h-[40px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px] sm:h-11 sm:min-h-[44px]"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="mb-1 block text-[13px] text-foreground sm:text-[14px]">
+              <label htmlFor="phone" className="mb-0.5 block text-[13px] text-foreground sm:mb-1 sm:text-[14px]">
                 전화번호
               </label>
               <Input
@@ -112,7 +110,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                 placeholder="010-0000-0000"
                 value={phone}
                 onChange={handlePhoneChange}
-                className="h-11 min-h-[44px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px]"
+                className="h-10 min-h-[40px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px] sm:h-11 sm:min-h-[44px]"
                 maxLength={22}
                 inputMode="tel"
                 autoComplete="tel"
@@ -120,7 +118,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             </div>
           </div>
 
-          <div className="rounded-[12px] border border-[#D1D5DB] bg-white px-3 py-2.5 shadow-sm sm:px-4 sm:py-3">
+          <div className="rounded-[12px] border border-[#D1D5DB] bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
             <div className="flex flex-row items-start justify-between gap-3">
               <label
                 htmlFor="privacy-consent"

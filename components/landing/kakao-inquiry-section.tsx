@@ -33,10 +33,10 @@ export function KakaoInquirySection() {
   return (
     <section
       id="kakao-inquiry"
-      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 sm:px-5 sm:py-5"
+      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3.5 sm:px-5 sm:py-5"
     >
       <div className="mx-auto min-w-0 max-w-[576px]">
-        <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-3.5 py-3 shadow-sm sm:px-4 sm:py-4">
+        <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-3 py-2.5 shadow-sm sm:px-4 sm:py-4">
           <div className="flex flex-col items-center text-center">
             <div
               className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full sm:mb-2 sm:h-10 sm:w-10"
@@ -54,7 +54,7 @@ export function KakaoInquirySection() {
               카카오톡으로 확인 가능합니다
             </p>
 
-            <ul className="mt-2 flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:mt-3 sm:gap-x-3">
+            <ul className="mt-1.5 flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:mt-3 sm:gap-x-3">
               {benefits.map((label) => (
                 <li
                   key={label}
@@ -69,23 +69,21 @@ export function KakaoInquirySection() {
               ))}
             </ul>
 
-            <p className="mt-2 max-w-[320px] text-[11px] leading-relaxed text-[#6B7280] sm:mt-3 sm:text-[12px]">
-              가입 내역이 있다면
-              <br />
-              함께 보내주세요
+            <p className="mt-1.5 max-w-[320px] text-[11px] leading-relaxed text-[#6B7280] sm:mt-3 sm:text-[12px]">
+              보험증권이 있다면 함께 보내주세요
             </p>
 
-            <div className="mt-3 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-2.5 py-2 sm:mt-3 sm:px-3 sm:py-2.5">
-              <p className="mb-1 text-[11px] font-medium text-[#6B7280] sm:text-[12px]">
+            <div className="mt-2.5 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-2 py-1.5 sm:mt-3 sm:px-3 sm:py-2.5">
+              <p className="mb-0.5 text-[11px] font-medium text-[#6B7280] sm:mb-1 sm:text-[12px]">
                 아래 QR코드를 스캔하세요
               </p>
-              <div className="mx-auto flex h-[118px] w-[118px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
+              <div className="mx-auto flex h-[108px] w-[108px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
                 <Image
                   src="/kakao-qr.png"
                   alt="카카오톡 오픈채팅 QR 코드"
                   width={124}
                   height={124}
-                  className="h-[118px] w-[118px] object-contain sm:h-[122px] sm:w-[122px]"
+                  className="h-[108px] w-[108px] object-contain sm:h-[122px] sm:w-[122px]"
                 />
               </div>
             </div>

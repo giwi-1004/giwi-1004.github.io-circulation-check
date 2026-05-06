@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils"
 
 const faqs = [
   {
-    question: "정말 무료인가요?",
-    answer: "네. 보장 구조 확인은 무료입니다.",
-  },
-  {
     question: "가입 권유를 받게 되나요?",
     answer: "원하지 않으시면 진행하지 않습니다.",
+  },
+  {
+    question: "정말 무료인가요?",
+    answer: "네. 보장 구조 확인은 무료입니다.",
   },
   {
     question: "무엇을 확인하나요?",
