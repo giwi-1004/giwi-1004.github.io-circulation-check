@@ -49,7 +49,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         onClick={onCtaClick}
         className={cn(
           LANDING_CTA_BUTTON_BASE,
-          "order-3 mt-1.5 w-full min-w-0 shrink-0 touch-manipulation sm:mt-2.5"
+          "order-3 mt-4 w-full min-w-0 shrink-0 touch-manipulation sm:mt-2.5"
         )}
       >
         내 보험 보장 구조 확인하기

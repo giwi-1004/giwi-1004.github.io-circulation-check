@@ -73,17 +73,17 @@ export function KakaoInquirySection() {
               보험증권이 있다면 함께 보내주세요
             </p>
 
-            <div className="mt-2.5 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-2 py-1.5 sm:mt-3 sm:px-3 sm:py-2.5">
+            <div className="mt-2.5 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-1.5 py-1 sm:mt-3 sm:px-3 sm:py-2.5">
               <p className="mb-0.5 text-[11px] font-medium text-[#6B7280] sm:mb-1 sm:text-[12px]">
                 아래 QR코드를 스캔하세요
               </p>
-              <div className="mx-auto flex h-[108px] w-[108px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
+              <div className="mx-auto flex h-[96px] w-[96px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
                 <Image
                   src="/kakao-qr.png"
                   alt="카카오톡 오픈채팅 QR 코드"
                   width={124}
                   height={124}
-                  className="h-[108px] w-[108px] object-contain sm:h-[122px] sm:w-[122px]"
+                  className="h-[96px] w-[96px] object-contain sm:h-[122px] sm:w-[122px]"
                 />
               </div>
             </div>

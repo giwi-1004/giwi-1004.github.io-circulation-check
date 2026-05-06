@@ -57,14 +57,14 @@ export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps
           </span>
         </h2>
 
-        <div className="mt-1.5 space-y-1.5 sm:mt-2 sm:space-y-2.5">
+        <div className="mt-1.5 space-y-1 sm:mt-2 sm:space-y-2.5">
           {questions.map((question, index) => (
             <button
               key={question}
               type="button"
               onClick={() => handleSelect(index)}
               className={cn(
-                "box-border w-full min-w-0 rounded-[12px] border-2 border-solid px-3.5 py-[9.5px] text-left transition-all sm:px-4 sm:py-3.5",
+                "box-border w-full min-w-0 rounded-[12px] border-2 border-solid px-3 py-[8.5px] text-left transition-all sm:px-4 sm:py-3.5",
                 selectedAnswers[index]
                   ? "border-[#1D4ED8] bg-[#DBEAFE] shadow-[0_2px_8px_rgba(29,78,216,0.18)] ring-1 ring-[#3B82F6]/35"
                   : "border-[#E5E7EB] bg-[#F9FAFB] hover:border-[#D1D5DB]"
