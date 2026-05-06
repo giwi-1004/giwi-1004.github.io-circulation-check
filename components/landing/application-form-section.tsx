@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { PRIVACY_CONSENT_FULL_TEXT } from "@/lib/privacy-consent-full-text"
-import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
+import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 import { normalizeKoreanPhoneToDigits } from "@/lib/normalize-kr-phone"
 import { submitLandingLead } from "@/lib/submit-landing-lead"
 
@@ -69,59 +69,59 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
   return (
     <section
       id="application-form"
-      className="bg-[#F2F2F2] px-5 py-10 sm:px-5 sm:py-10"
+      className="bg-[#F2F2F2] px-4 py-6 sm:px-5 sm:py-8"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-2 text-[20px] font-bold leading-[1.4] text-foreground">
-          부담 없이 보장 구조만 먼저 확인해보세요
-        </h2>
-
-        <div className="mb-6 space-y-3 text-[14px] leading-relaxed text-muted-foreground">
-          <p>
-            보험 가입 권유가 아니라
+        <div className="mb-4 sm:mb-5">
+          <h2 className="m-0 text-[19px] font-bold leading-[1.28] tracking-tight text-foreground sm:text-[20px] sm:leading-[1.35]">
+            전화 상담 강요나 보험 가입 권유 없이,
+          </h2>
+          <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-[14px] sm:leading-relaxed">
+            현재 보장 구조만
             <br />
-            현재 보장 구조 확인 목적입니다
+            객관적으로 확인해드립니다
           </p>
-          <p>전화 상담을 강요하지 않습니다</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="mb-2 block text-[14px] text-foreground">
-              이름
-            </label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="이름을 입력해주세요"
-              value={name}
-              onChange={(e) => {
-                setFormError("")
-                setName(e.target.value)
-              }}
-              className="h-12 rounded-[12px] border-[#B7B9BC] text-[16px]"
-            />
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
+            <div>
+              <label htmlFor="name" className="mb-1 block text-[13px] text-foreground sm:text-[14px]">
+                이름
+              </label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="이름을 입력해주세요"
+                value={name}
+                onChange={(e) => {
+                  setFormError("")
+                  setName(e.target.value)
+                }}
+                className="h-11 min-h-[44px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px]"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="mb-1 block text-[13px] text-foreground sm:text-[14px]">
+                전화번호
+              </label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="010-0000-0000"
+                value={phone}
+                onChange={handlePhoneChange}
+                className="h-11 min-h-[44px] rounded-[12px] border-[#B7B9BC] px-3.5 text-[16px]"
+                maxLength={22}
+                inputMode="tel"
+                autoComplete="tel"
+              />
+            </div>
           </div>
 
-          <div>
-            <label htmlFor="phone" className="mb-2 block text-[14px] text-foreground">
-              전화번호
-            </label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder="010-0000-0000"
-              value={phone}
-              onChange={handlePhoneChange}
-              className="h-12 rounded-[12px] border-[#B7B9BC] text-[16px]"
-              maxLength={22}
-              inputMode="tel"
-              autoComplete="tel"
-            />
-          </div>
-
-          <div>
-            <div className="flex flex-row items-start justify-between gap-4">
+          <div className="rounded-[12px] border border-[#D1D5DB] bg-white px-3 py-2.5 shadow-sm sm:px-4 sm:py-3">
+            <div className="flex flex-row items-start justify-between gap-3">
               <label
                 htmlFor="privacy-consent"
                 className="flex min-w-0 flex-1 cursor-pointer items-start gap-2"
@@ -133,15 +133,15 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                     setFormError("")
                     setPrivacyAgreed(v === true)
                   }}
-                  className="mt-0.5 border-[#A5A7A9] data-[state=checked]:border-[#2563EB] data-[state=checked]:bg-[#2563EB]"
+                  className="mt-0.5 border-[#94A3B8] data-[state=checked]:border-[#2563EB] data-[state=checked]:bg-[#2563EB]"
                 />
-                <span className="text-left text-[14px] leading-relaxed text-foreground">
+                <span className="text-left text-[14px] font-medium leading-snug text-[#374151] sm:text-[14px] sm:leading-relaxed">
                   [필수] 개인정보 수집 및 이용에 동의합니다
                 </span>
               </label>
               <button
                 type="button"
-                className="shrink-0 text-[14px] font-medium text-[#6B7280] underline-offset-4 hover:underline"
+                className="shrink-0 text-[12px] font-semibold text-[#64748B] underline-offset-4 hover:text-[#334155] hover:underline"
                 aria-expanded={privacyDetailOpen}
                 onClick={() => setPrivacyDetailOpen((o) => !o)}
               >
@@ -152,12 +152,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             <div
               className={cn(
                 "overflow-hidden transition-[max-height] duration-300 ease-in-out",
-                privacyDetailOpen && "mt-4"
+                privacyDetailOpen && "mt-3"
               )}
               style={{ maxHeight: privacyDetailOpen ? 200 : 0 }}
               aria-hidden={!privacyDetailOpen}
             >
-              <div className="max-h-[200px] overflow-y-auto bg-[#F9FAFB] p-3 text-[12px] leading-[1.6] text-foreground">
+              <div className="max-h-[200px] overflow-y-auto rounded-lg border border-[#E5E7EB] bg-[#F8FAFC] p-3 text-[12px] leading-[1.55] text-[#334155]">
                 <pre className="m-0 whitespace-pre-wrap break-words font-sans">
                   {PRIVACY_CONSENT_FULL_TEXT}
                 </pre>
@@ -174,13 +174,13 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
           <Button
             type="submit"
             disabled={isSubmitting || !privacyAgreed}
-            className={cn(LANDING_CTA_BUTTON_CLASS)}
+            className={cn(LANDING_CTA_BUTTON_BASE, "w-full")}
           >
-            {isSubmitting ? "요청 중..." : "무료로 보장 구조 확인하기"}
+            {isSubmitting ? "요청 중..." : "내 보험 구조 확인 요청하기"}
           </Button>
 
-          <p className="text-center text-[12px] leading-relaxed text-muted-foreground">
-            입력하신 정보는 보장 확인 및 안내 목적에만 사용됩니다
+          <p className="-mt-1 text-center text-[11px] leading-snug text-muted-foreground sm:text-[12px] sm:leading-relaxed">
+            입력하신 정보는 보장 확인 목적에만 사용됩니다
           </p>
         </form>
       </div>

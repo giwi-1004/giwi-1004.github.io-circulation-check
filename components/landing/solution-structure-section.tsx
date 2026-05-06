@@ -1,25 +1,37 @@
 "use client"
 
+const compareCards: { title: string; lines: string[] }[] = [
+  {
+    title: "기존 보험",
+    lines: ["진단 시", "1회 지급 중심"],
+  },
+  {
+    title: "확인이 필요한 부분",
+    lines: ["치료가 반복될 때", "계속 대응 가능한 구조인지"],
+  },
+]
+
 export function SolutionStructureSection() {
   return (
-    <section className="bg-[#FFFFFF] px-5 py-10 sm:px-5 sm:py-10">
-      <div className="mx-auto min-w-0 max-w-[720px] space-y-3 text-[16.5px] font-normal leading-relaxed text-foreground">
-        <p>이 보장은</p>
-        <p>
-          진단이 아니라
-          <br />
-          <span className="font-semibold text-[#C2410C]">
-            치료 기준으로 보장이 이루어집니다
-          </span>
-        </p>
-        <p>치료가 발생할 때마다</p>
-        <p>
-          <span className="font-semibold text-[#C2410C]">
-            연간 한도와 약관 조건 내에서
-            <br />
-            보험금이 반복 지급될 수 있는 구조입니다
-          </span>
-        </p>
+    <section className="bg-[#FFFFFF] px-4 py-8 sm:px-5 sm:py-8">
+      <div className="mx-auto min-w-0 max-w-[720px]">
+        <ul className="grid list-none grid-cols-1 gap-3 p-0 text-center sm:grid-cols-2">
+          {compareCards.map((item) => (
+            <li
+              key={item.title}
+              className="rounded-[12px] border border-[#E5E7EB] bg-[#FAFAFA] px-3 py-3 sm:px-4 sm:py-3.5"
+            >
+              <p className="mb-2 text-[17px] font-bold leading-snug text-[#C2410C] sm:text-[18px]">
+                {item.title}
+              </p>
+              <p className="text-[14px] font-semibold leading-[1.45] text-[#374151] sm:text-[15px]">
+                {item.lines[0]}
+                <br />
+                {item.lines[1]}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 
-import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
+import { cn } from "@/lib/utils"
+import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 
 interface HeroSectionProps {
   onCtaClick: () => void
@@ -11,42 +12,34 @@ interface HeroSectionProps {
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
     <section
-      className="box-border w-full min-w-0 max-w-[720px] bg-[#FFFFFF] px-5 py-10 text-left sm:mx-auto"
-      style={{
-        paddingTop: "max(40px, calc(32px + env(safe-area-inset-top, 0px)))",
-        paddingBottom: "max(40px, calc(20px + env(safe-area-inset-bottom, 0px)))",
-      }}
+      className={cn(
+        "box-border flex w-full min-w-0 max-w-[720px] flex-col bg-[#FFFFFF] px-4 text-left sm:mx-auto sm:px-5",
+        "pt-[max(24px,calc(18px+env(safe-area-inset-top,0px)))] pb-[max(20px,calc(12px+env(safe-area-inset-bottom,0px)))]",
+        "sm:pt-[max(32px,calc(24px+env(safe-area-inset-top,0px)))] sm:pb-[max(28px,calc(16px+env(safe-area-inset-bottom,0px)))]"
+      )}
     >
-      <h1 className="m-0 text-left font-normal">
-        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
-          뇌·심장 혈관 질환은
+      <h1 className="order-1 m-0 mb-1.5 text-left font-normal sm:mb-2">
+        <span className="block text-[18px] font-bold leading-[1.22] text-[#C2410C] sm:text-[21px] sm:leading-[1.28]">
+          뇌·심장 보험,
         </span>
-        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
-          갑작스럽게 발생하고
+        <span className="mt-0.5 block text-[18px] font-bold leading-[1.22] text-[#C2410C] sm:mt-1 sm:text-[21px] sm:leading-[1.28]">
+          진단금만으로 충분하신가요?
         </span>
-        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
-          수술이나 중환자실 치료로
+        <span className="mt-1.5 block text-[16px] font-medium leading-[1.35] text-[#1E293B] sm:mt-2 sm:text-[18px] sm:leading-[1.4]">
+          치료는
         </span>
-        <span className="mb-0.5 mt-0.5 block text-[26px] font-bold leading-[1.3] text-[#C2410C]">
-          수천만원 비용이 발생할 수 있습니다
+        <span className="mt-0.5 block text-[16px] font-medium leading-[1.35] text-[#1E293B] sm:text-[18px] sm:leading-[1.4]">
+          한 번으로 끝나지 않을 수 있습니다
         </span>
-        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
-          보험은 있지만,
+        <span className="mt-1.5 block text-[16px] font-normal leading-[1.42] text-[#334155] sm:mt-2 sm:text-[17px] sm:leading-[1.46]">
+          내 보험 구조,
         </span>
-        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
-          이 비용까지 대비되어 있는지는
-        </span>
-        <span className="mt-px block text-[0.9625rem] font-[440] leading-[1.3] text-[#848b97]">
-          구조를 확인해야 알 수 있습니다
-        </span>
-        <span className="mt-2 block text-[13px] font-[440] leading-relaxed text-[#9CA3AF]">
-          일반 질병수술 보장과는
-          <br />
-          구조가 다를 수 있습니다
+        <span className="mt-0.5 block text-[16px] font-normal leading-[1.42] text-[#334155] sm:text-[17px] sm:leading-[1.46]">
+          1분 안에 확인해보세요
         </span>
       </h1>
 
-      <div className="relative mt-[14px] h-[165px] w-full min-w-0 overflow-hidden rounded-[16px]">
+      <div className="relative order-2 mt-1.5 h-[114px] w-full min-w-0 overflow-hidden rounded-[16px] sm:mt-2 sm:h-[162px]">
         <Image
           src="/images/hero-heart-pain.png"
           alt="심장 통증으로 가슴을 움켜쥔 남성"
@@ -60,9 +53,12 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       <button
         type="button"
         onClick={onCtaClick}
-        className={`${LANDING_CTA_BUTTON_CLASS} mx-auto w-[72%] min-w-0 shrink-0 touch-manipulation`}
+        className={cn(
+          LANDING_CTA_BUTTON_BASE,
+          "order-3 mx-auto mt-2 w-[72%] min-w-0 shrink-0 touch-manipulation sm:mt-2.5"
+        )}
       >
-        내 보험, 치료비 보장 구조 확인하기
+        내 보험 보장 구조 확인하기
       </button>
     </section>
   )

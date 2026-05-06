@@ -2,10 +2,7 @@
 
 import { useState, useCallback } from "react"
 import { HeroSection } from "@/components/landing/hero-section"
-import { ImportanceSection } from "@/components/landing/importance-section"
 import { CostShockSection } from "@/components/landing/cost-shock-section"
-import { ProblemSection } from "@/components/landing/problem-section"
-import { SolutionStructureSection } from "@/components/landing/solution-structure-section"
 import { CtaCheckSection } from "@/components/landing/cta-check-section"
 import { CheckQuestionsSection } from "@/components/landing/check-questions-section"
 import { ResultSection } from "@/components/landing/result-section"
@@ -46,14 +43,14 @@ export default function LandingPage() {
       {/* 2. 선택 문항 (히어로 직후) */}
       <CheckQuestionsSection onComplete={handleCheckComplete} />
 
-      {/* 3. 비용 */}
+      {/* 3. 치료비 이미지 */}
       <CostShockSection />
 
-      {/* 4. 문제 정의 */}
-      <ProblemSection />
+      {/* 4. CTA (문항으로 유도) */}
+      <CtaCheckSection onCtaClick={() => scrollToSection("check-questions")} />
 
-      {/* 5. 해결 구조 */}
-      <SolutionStructureSection />
+      {/* 5. 신청 폼 */}
+      <ApplicationFormSection onSubmit={handleFormSubmit} />
 
       {/* 6. 결과 (체크 완료 후 표시) */}
       {showResult && (
@@ -63,23 +60,14 @@ export default function LandingPage() {
         />
       )}
 
-      {/* 7. 신청 폼 */}
-      <ApplicationFormSection onSubmit={handleFormSubmit} />
-
-      {/* 8. 순환계 중요성 */}
-      <ImportanceSection />
-
-      {/* 9. CTA (문항으로 유도) */}
-      <CtaCheckSection onCtaClick={() => scrollToSection("check-questions")} />
-
-      {/* 10. 카카오 */}
+      {/* 7. 카카오 */}
       <KakaoInquirySection />
 
-      {/* 11. FAQ */}
+      {/* 8. FAQ */}
       <FAQSection />
 
       {/* Footer */}
-      <footer className="border-t border-[#E5E7EB] bg-[#F7F7F7] px-5 py-10 sm:px-5">
+      <footer className="border-t border-[#E5E7EB] bg-[#F7F7F7] px-4 py-8 sm:px-5 sm:py-10">
         <div className="mx-auto max-w-[720px] min-w-0 text-center">
           <p className="text-[13px] text-muted-foreground">
             본 페이지는 보험 상담 서비스를 안내하며,

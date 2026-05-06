@@ -1,9 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { AlertCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { LANDING_CTA_BUTTON_CLASS } from "@/lib/landing-cta"
+import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 
 interface ResultSectionProps {
   selectedCount: number
@@ -16,63 +15,76 @@ export function ResultSection({ selectedCount, onCtaClick }: ResultSectionProps)
   return (
     <section
       id="result"
-      className="bg-[#F7F7F7] px-5 py-10 text-foreground sm:px-5 sm:py-10"
+      className="bg-[#F7F7F7] px-4 py-8 text-foreground sm:px-5 sm:py-10"
     >
-      <div className="mx-auto min-w-0 max-w-[720px] text-center">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#93C5FD]/25">
-          <AlertCircle className="h-8 w-8 text-[#93C5FD]" strokeWidth={2} />
-        </div>
-
-        {needsCheck ? (
-          <>
-            <h2 className="mb-4 text-[22px] font-bold leading-[1.4] text-foreground">
-              보장 구조 확인이 필요한 상태입니다
-            </h2>
-
-            <div className="mb-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-              <p>현재 상태라면</p>
-              <p>치료비 대비가 부족할 가능성이 있습니다</p>
-              <p>
-                순환계 질환은
-                <br />
-                치료가 여러 번 이어질 수 있기 때문에
+      <div className="mx-auto min-w-0 max-w-[720px]">
+        <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] px-4 py-5 text-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">
+          {needsCheck ? (
+            <>
+              <p className="m-0 mb-2 inline-flex items-center justify-center rounded-full bg-[#EFF6FF] px-3 py-1 text-[12px] font-semibold leading-none text-[#1D4ED8]">
+                확인 필요
               </p>
-              <p>
-                보험 구조에 따라
-                <br />
-                금액 차이가 발생할 수 있습니다
-              </p>
-              <p>
+              <h2 className="mb-2 text-[19px] font-bold leading-snug text-foreground sm:mb-3 sm:text-[22px] sm:leading-[1.35]">
+                보장 구조 확인이 필요한 상태입니다
+              </h2>
+
+              <div className="mx-auto mb-3 max-w-[26rem] space-y-0 text-[14px] leading-snug text-muted-foreground sm:text-[15px] sm:leading-relaxed">
+                <p className="m-0">
+                  현재 보험이
+                  <br />
+                  진단금 1회 중심인지,
+                  <br />
+                  치료비 반복 보장 구조인지 확인이 필요합니다
+                </p>
+              </div>
+
+              <div className="mx-auto mb-3 max-w-[26rem] rounded-[12px] border border-[#FED7AA] bg-[#FFF7ED] px-3 py-2.5 text-[14px] font-semibold leading-snug text-[#C2410C] sm:px-4 sm:py-3">
                 지금 확인하지 않으면
                 <br />
-                예상치 못한 비용 부담이 생길 수 있습니다
-              </p>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 className="mb-4 text-[22px] font-bold leading-[1.4] text-foreground">
-              현재 상태는 양호할 수 있습니다
-            </h2>
-
-            <div className="mb-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-              <p>증상이 없더라도</p>
-              <p>보장 구조는 확인이 필요합니다</p>
-              <p>
-                내 보험이
+                실제 치료 상황에서 보장 차이를
                 <br />
-                치료 기준 보장인지 확인해보세요
-              </p>
-            </div>
-          </>
-        )}
+                뒤늦게 알게 될 수 있습니다
+              </div>
 
-        <Button
-          onClick={onCtaClick}
-          className={cn(LANDING_CTA_BUTTON_CLASS)}
-        >
-          무료로 보장 구조 확인하기
-        </Button>
+              <Button
+                onClick={onCtaClick}
+                className={cn(
+                  LANDING_CTA_BUTTON_BASE,
+                  "w-full max-w-[26rem] shadow-[0_4px_18px_rgba(29,78,216,0.38)] sm:max-w-none"
+                )}
+              >
+                내 보험 구조 확인 요청하기
+              </Button>
+            </>
+          ) : (
+            <>
+              <p className="m-0 mb-2 inline-flex items-center justify-center rounded-full bg-[#ECFDF5] px-3 py-1 text-[12px] font-semibold leading-none text-[#047857]">
+                확인 권장
+              </p>
+              <h2 className="mb-2 text-[19px] font-bold leading-snug text-foreground sm:mb-3 sm:text-[22px] sm:leading-[1.35]">
+                현재 상태는 양호할 수 있습니다
+              </h2>
+
+              <div className="mx-auto mb-3 max-w-[26rem] text-[14px] leading-snug text-muted-foreground sm:mb-4 sm:text-[15px] sm:leading-relaxed">
+                <p className="m-0">
+                  증상이 없더라도
+                  <br />
+                  보장 구조는 보험증권을 확인해야 알 수 있습니다
+                </p>
+              </div>
+
+              <Button
+                onClick={onCtaClick}
+                className={cn(
+                  LANDING_CTA_BUTTON_BASE,
+                  "w-full max-w-[26rem] shadow-[0_4px_18px_rgba(29,78,216,0.38)] sm:max-w-none"
+                )}
+              >
+                내 보험 구조 확인 요청하기
+              </Button>
+            </>
+          )}
+        </div>
       </div>
     </section>
   )
