@@ -32,9 +32,9 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-[#F9FAFB] px-4 py-5 sm:px-5 sm:py-8">
+    <section className="bg-[#F9FAFB] px-4 py-6 sm:px-5 sm:py-8">
       <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-4 text-[20px] font-semibold leading-[1.4] text-[#6B7280] sm:mb-5">
+        <h2 className="mb-5 text-[20px] font-bold leading-[1.4] text-[#374151] sm:mb-5">
           자주 묻는 질문
         </h2>
 

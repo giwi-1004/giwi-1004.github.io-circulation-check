@@ -14,7 +14,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
     <section
       className={cn(
         "box-border flex w-full min-w-0 max-w-[720px] flex-col bg-[#FFFFFF] px-4 text-left sm:mx-auto sm:px-5",
-        "pt-[max(20px,calc(14px+env(safe-area-inset-top,0px)))] pb-[max(16px,calc(10px+env(safe-area-inset-bottom,0px)))]",
+        "pt-[max(22px,calc(14px+env(safe-area-inset-top,0px)))] pb-[max(22px,calc(12px+env(safe-area-inset-bottom,0px)))]",
         "sm:pt-[max(32px,calc(24px+env(safe-area-inset-top,0px)))] sm:pb-[max(28px,calc(16px+env(safe-area-inset-bottom,0px)))]"
       )}
     >
@@ -26,14 +26,11 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           진단금만으로 충분하신가요?
         </span>
         <span className="mt-1 block text-[16px] font-medium leading-[1.35] text-[#1E293B] sm:mt-2 sm:text-[18px] sm:leading-[1.4]">
-          치료는
-        </span>
-        <span className="mt-0.5 block text-[16px] font-medium leading-[1.35] text-[#1E293B] sm:text-[18px] sm:leading-[1.4]">
-          한 번으로 끝나지 않을 수 있습니다
+          치료는 반복될 수 있습니다
         </span>
       </h1>
 
-      <div className="relative order-2 mt-1 h-[102px] w-full min-w-0 overflow-hidden rounded-[16px] sm:mt-2 sm:h-[162px]">
+      <div className="relative order-2 mt-1 mb-3 h-[102px] w-full min-w-0 overflow-hidden rounded-[16px] sm:mt-2 sm:h-[162px]">
         <Image
           src="/images/hero-heart-pain.png"
           alt="심장 통증으로 가슴을 움켜쥔 남성"
@@ -49,7 +46,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         onClick={onCtaClick}
         className={cn(
           LANDING_CTA_BUTTON_BASE,
-          "order-3 mt-4 w-full min-w-0 shrink-0 touch-manipulation sm:mt-2.5"
+          "order-3 mb-8 w-full min-w-0 touch-manipulation"
         )}
       >
         내 보험 보장 구조 확인하기

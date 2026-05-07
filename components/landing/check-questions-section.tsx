@@ -8,8 +8,8 @@ const questions = [
   "어지럼·두통을 자주 느낀다",
   "가슴 답답함·두근거림이 있다",
   "가족 중 뇌·심장 질환 병력이 있다",
-  "내 보험에\n뇌·심장 치료비 보장이 있는지 모른다",
-  "진단금은 있지만 치료비 보장은 모른다",
+  "내 보험에 치료비 보장이 있는지 모르겠다",
+  "진단금만 확인하고 가입했다",
 ]
 
 interface CheckQuestionsSectionProps {
@@ -36,7 +36,7 @@ export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps
   return (
     <section
       id="check-questions"
-      className="bg-[#FFFFFF] px-4 py-5 sm:px-5 sm:py-8"
+      className="bg-[#FFFFFF] px-4 py-6 sm:px-5 sm:py-8"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
         <h2 className="mb-2 flex flex-col font-normal text-foreground sm:mb-2.5">
@@ -46,25 +46,22 @@ export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps
           <span className="mt-1.5 block text-[17px] font-bold leading-[1.38] tracking-tight text-foreground sm:mt-2 sm:text-[18px] sm:leading-[1.42]">
             내 보험도 대비되어 있을까요?
           </span>
-          <span className="mt-1 block text-[14px] font-normal leading-snug text-foreground sm:mt-1.5 sm:text-[15px] sm:leading-relaxed">
+          <span className="mt-1 block text-[14px] font-normal leading-[1.35] text-foreground sm:mt-1.5 sm:text-[15px] sm:leading-relaxed">
             아래 항목 중 해당되는 내용을 선택해주세요
           </span>
-          <span className="mt-0.5 block text-[12px] leading-snug text-[#6B7280] sm:mt-1 sm:text-[13px] sm:leading-relaxed">
-            <span className="block">2개 이상 해당된다면</span>
-            <span className="mt-1 block sm:mt-1.5">
-              보장 점검이 필요할 수 있습니다
-            </span>
+          <span className="mt-0.5 block text-[12px] font-normal leading-[1.32] text-[#6B7280] sm:mt-1 sm:text-[13px] sm:leading-[1.4]">
+            2개 이상 해당된다면 보장 점검이 필요합니다
           </span>
         </h2>
 
-        <div className="mt-1.5 space-y-1 sm:mt-2 sm:space-y-2.5">
+        <div className="mt-1.5 space-y-0.5 sm:mt-2 sm:space-y-2.5">
           {questions.map((question, index) => (
             <button
               key={question}
               type="button"
               onClick={() => handleSelect(index)}
               className={cn(
-                "box-border w-full min-w-0 rounded-[12px] border-2 border-solid px-3 py-[8.5px] text-left transition-all sm:px-4 sm:py-3.5",
+                "box-border w-full min-w-0 rounded-[12px] border-2 border-solid px-2.5 py-2 text-left transition-all sm:px-4 sm:py-3.5",
                 selectedAnswers[index]
                   ? "border-[#1D4ED8] bg-[#DBEAFE] shadow-[0_2px_8px_rgba(29,78,216,0.18)] ring-1 ring-[#3B82F6]/35"
                   : "border-[#E5E7EB] bg-[#F9FAFB] hover:border-[#D1D5DB]"

@@ -33,7 +33,7 @@ export function KakaoInquirySection() {
   return (
     <section
       id="kakao-inquiry"
-      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3.5 sm:px-5 sm:py-5"
+      className="border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-5 sm:px-5 sm:py-5"
     >
       <div className="mx-auto min-w-0 max-w-[576px]">
         <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-3 py-2.5 shadow-sm sm:px-4 sm:py-4">
@@ -49,9 +49,7 @@ export function KakaoInquirySection() {
               카카오톡 1:1 문의
             </h2>
             <p className="mt-0.5 text-[11px] leading-snug text-[#6B7280] sm:mt-1 sm:text-[12px] sm:leading-relaxed">
-              전화보다 편하게
-              <br />
-              카카오톡으로 확인 가능합니다
+              전화보다 편하게 카카오톡으로 확인 가능합니다
             </p>
 
             <ul className="mt-1.5 flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:mt-3 sm:gap-x-3">
@@ -70,7 +68,7 @@ export function KakaoInquirySection() {
             </ul>
 
             <p className="mt-1.5 max-w-[320px] text-[11px] leading-relaxed text-[#6B7280] sm:mt-3 sm:text-[12px]">
-              보험증권이 있다면 함께 보내주세요
+              보험증권이 있으면 함께 보내주세요
             </p>
 
             <div className="mt-2.5 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-1.5 py-1 sm:mt-3 sm:px-3 sm:py-2.5">

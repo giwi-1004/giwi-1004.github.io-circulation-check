@@ -15,7 +15,7 @@ export function ResultSection({ selectedCount, onCtaClick }: ResultSectionProps)
   return (
     <section
       id="result"
-      className="bg-[#F7F7F7] px-4 py-6 text-foreground sm:px-5 sm:py-10"
+      className="bg-[#F7F7F7] px-4 py-7 text-foreground sm:px-5 sm:py-10"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
         <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] px-4 py-4 text-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">

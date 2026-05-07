@@ -69,7 +69,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
   return (
     <section
       id="application-form"
-      className="bg-[#F2F2F2] px-4 py-5 sm:px-5 sm:py-8"
+      className="bg-[#F2F2F2] px-4 py-6 sm:px-5 sm:py-8"
     >
       <div className="mx-auto min-w-0 max-w-[720px]">
         <div className="mb-3 sm:mb-5">
@@ -77,7 +77,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             상담 강요 없이
           </h2>
           <p className="mt-1 text-[13px] leading-[1.4] text-muted-foreground sm:mt-2 sm:text-[14px] sm:leading-relaxed">
-            편하게 확인하실 수 있습니다
+            부담 없이 확인 가능합니다
           </p>
         </div>
 
