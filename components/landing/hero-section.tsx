@@ -83,13 +83,13 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
                 <tr className="border-b border-[#F0F0F0]">
                   <th
                     scope="col"
-                    className="bg-[#FEE2E2] py-2 pl-[12px] pr-2 text-[12px] font-bold text-[#991B1B]"
+                    className="break-keep bg-[#FEE2E2] py-2 pl-[12px] pr-2 text-[13px] font-bold text-[#991B1B]"
                   >
                     일반 보험
                   </th>
                   <th
                     scope="col"
-                    className="bg-[#E8591A] py-2 pl-[12px] pr-2 text-[12px] font-bold text-[#ffffff]"
+                    className="break-keep bg-[#E8591A] py-2 pl-[12px] pr-2 text-[13px] font-bold text-[#ffffff]"
                   >
                     순환계 통합치료비
                   </th>
@@ -97,24 +97,24 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
               </thead>
               <tbody>
                 <tr className="border-b border-[#F0F0F0] bg-[#ffffff]">
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">
                     ✕ 진단 시 1회 지급
                   </td>
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
-                    ✓ 연간 한도 내 반복 지급
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
+                    ✓ 치료마다 반복 지급
                   </td>
                 </tr>
                 <tr className="border-b border-[#F0F0F0] bg-[#FFF5F0]">
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">
-                    ✕ 재치료비 본인 부담
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">
+                    ✕ 재치료비 미보장
                   </td>
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
-                    ✓ 재발 시 연간 1회 한도 지급
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
+                    ✓ 재발 시 재지급 가능
                   </td>
                 </tr>
                 <tr className="border-b border-[#F0F0F0] bg-[#ffffff]">
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">✕ 재활비 미보장</td>
-                  <td className="py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] text-[#991B1B]">✕ 재활비 미보장</td>
+                  <td className="break-keep py-[10px] pl-[12px] pr-2 text-[13px] font-semibold text-[#166534]">
                     ✓ 재활치료 연간 보장
                   </td>
                 </tr>

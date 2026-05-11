@@ -1,9 +1,6 @@
 "use client"
 
-import { CheckCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
+import { IconCircleCheck, IconClock } from "@tabler/icons-react"
 
 interface SuccessModalProps {
   isOpen: boolean
@@ -22,27 +19,47 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
         role="presentation"
       />
 
-      <div className="relative max-h-[min(90dvh,calc(100dvh-2rem))] w-full max-w-sm overflow-y-auto rounded-2xl bg-background p-6 text-center shadow-xl sm:p-8">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#93C5FD]/25">
-          <CheckCircle className="h-8 w-8 text-[#93C5FD]" strokeWidth={2} />
+      <div className="relative w-full max-w-[320px] rounded-[16px] bg-white p-6 text-center shadow-xl">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#FFF0E8]">
+          <IconCircleCheck className="h-6 w-6 text-[#E8591A]" stroke={2} aria-hidden />
         </div>
 
-        <h3 className="mb-2 text-[20px] font-bold text-foreground">
-          요청이 완료되었습니다
+        <h3 className="mb-2 text-center text-[18px] font-bold leading-snug text-[#1B2A4A]">
+          상담 신청이 완료됐습니다
         </h3>
 
-        <p className="mb-6 text-[15px] leading-relaxed text-muted-foreground">
-          입력하신 번호로
+        <p className="mb-4 text-center text-[14px] leading-relaxed text-[#666]">
+          입력하신 번호로 담당 설계사가
           <br />
-          빠른 시일 내 연락드리겠습니다
+          직접 연락드립니다
         </p>
 
-        <Button
+        <div className="mb-4 rounded-[10px] bg-[#F8F9FC] px-4 py-3 text-left">
+          <div className="flex items-center gap-1.5">
+            <IconClock className="h-[14px] w-[14px] shrink-0 text-[#E8591A]" stroke={2} aria-hidden />
+            <span className="text-[12px] font-semibold text-[#1B2A4A]">상담 가능 시간</span>
+          </div>
+          <p className="mt-1 text-[13px] text-[#444]">평일 오전 9시 ~ 오후 6시</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-[#888]">
+            신청 시간에 따라 다음 영업일에
+            <br />
+            연락드릴 수 있습니다
+          </p>
+        </div>
+
+        <p className="mb-3 text-center text-[12px] leading-relaxed text-[#888]">
+          빠른 확인은 카카오톡으로 먼저
+          <br />
+          문의하실 수 있습니다
+        </p>
+
+        <button
+          type="button"
           onClick={onClose}
-          className={cn(LANDING_CTA_BUTTON_BASE, "my-6")}
+          className="w-full rounded-[10px] border-none bg-[#E8591A] p-[13px] text-[15px] font-bold text-white"
         >
           확인
-        </Button>
+        </button>
       </div>
     </div>
   )
