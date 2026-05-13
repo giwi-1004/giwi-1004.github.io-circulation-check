@@ -33,7 +33,7 @@ export default function LandingPage() {
       <KakaoInquirySection />
       <FAQSection />
 
-      <footer className="bg-[#0D1B2A] px-7 py-11 text-center">
+      <footer className="bg-[#152B57] px-7 py-11 text-center">
         <p className="mb-5 font-sans text-[13px] tracking-[0.06em] text-[#C9A84C]">
           순환계 치료비 보장 점검
         </p>
