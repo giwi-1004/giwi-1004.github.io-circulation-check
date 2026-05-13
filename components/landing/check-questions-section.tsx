@@ -35,7 +35,7 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
     : "내 보험 보장 구조 확인하기"
 
   return (
-    <section id="check-questions" className="bg-[#1C5290] px-7 py-[60px]">
+    <section id="check-questions" className="bg-[#0F3460] px-7 py-[60px]">
       <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
         보장 점검
       </p>

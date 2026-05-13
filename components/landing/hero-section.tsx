@@ -12,7 +12,7 @@ const HERO_IMAGE =
 
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[#1C5290] px-7 pb-[72px] pt-[60px] text-center">
+    <section className="relative overflow-hidden bg-[#0F3460] px-7 pb-[72px] pt-[60px] text-center">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[-100px] h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(201,168,76,0.1)_0%,transparent_65%)]"

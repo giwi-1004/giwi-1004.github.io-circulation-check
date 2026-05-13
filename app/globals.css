@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --navy: #1C5290;
-  --navy-mid: #1C5290;
-  --navy-light: #2762A3;
+  --navy: #0F3460;
+  --navy-mid: #0F3460;
+  --navy-light: #1A4A7A;
   --background: #FFFFFF;
   --foreground: #111111;
   --card: #FFFFFF;

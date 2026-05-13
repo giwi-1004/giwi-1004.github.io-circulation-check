@@ -18,7 +18,7 @@ export function CompareSection() {
 
       <div className="overflow-hidden rounded-lg border border-[rgba(201,168,76,0.25)] bg-white">
         <div className="grid grid-cols-2">
-          <div className="compare-head-cell general border-r border-[rgba(201,168,76,0.25)] bg-[#4573AC] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-white/60">
+          <div className="compare-head-cell general border-r border-[rgba(201,168,76,0.25)] bg-[#1A4A7A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-white/60">
             일반 보험
           </div>
           <div className="bg-[#0D1B2A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
@@ -40,7 +40,7 @@ export function CompareSection() {
         ))}
       </div>
 
-      <div className="highlight-bar mt-5 rounded-md bg-gradient-to-br from-[#1C5290] to-[#2762A3] px-5 py-5 text-center">
+      <div className="highlight-bar mt-5 rounded-md bg-gradient-to-br from-[#0F3460] to-[#1A4A7A] px-5 py-5 text-center">
         <strong className="mb-1 block font-sans text-[19px] font-bold text-[#E2C97E]">
           혈전용해치료 최대 2,500만원
         </strong>
