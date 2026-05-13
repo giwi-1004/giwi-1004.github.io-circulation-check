@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { cn } from "@/lib/utils"
+
 import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
+import { cn } from "@/lib/utils"
 
 const questions = [
   "어지럼·두통을 자주 느낀다",
@@ -13,109 +14,72 @@ const questions = [
 ]
 
 interface CheckQuestionsSectionProps {
-  onComplete: (count: number) => void
+  onCtaClick: () => void
 }
 
-export function CheckQuestionsSection({ onComplete }: CheckQuestionsSectionProps) {
+export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps) {
   const [selectedAnswers, setSelectedAnswers] = useState<boolean[]>(
-    new Array(questions.length).fill(false)
+    new Array(questions.length).fill(false),
   )
 
   const handleSelect = (index: number) => {
-    const newAnswers = [...selectedAnswers]
-    newAnswers[index] = !newAnswers[index]
-    setSelectedAnswers(newAnswers)
+    const next = [...selectedAnswers]
+    next[index] = !next[index]
+    setSelectedAnswers(next)
   }
 
   const selectedCount = selectedAnswers.filter(Boolean).length
-
-  const handleSubmit = () => {
-    onComplete(selectedCount)
-  }
+  const ctaLabel =
+    selectedCount >= 2
+      ? "지금 바로 보장 구조 확인하기 →"
+      : "내 보험 보장 구조 확인하기"
 
   return (
-    <section
-      id="check-questions"
-      className="bg-[#FFFFFF] px-4 py-4 sm:px-5 sm:py-4"
-    >
-      <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-2 flex flex-col font-normal text-foreground sm:mb-2.5">
-          <span className="block text-[17px] font-bold leading-[1.38] tracking-tight text-foreground sm:text-[18px] sm:leading-[1.42]">
-            내 보험,
-          </span>
-          <span className="mt-1.5 block text-[17px] font-bold leading-[1.38] tracking-tight text-foreground sm:mt-2 sm:text-[18px] sm:leading-[1.42]">
-            치료비까지 준비되어 있을까요?
-          </span>
-          <span className="mt-1 block text-[14px] font-normal leading-snug text-foreground sm:mt-1.5 sm:text-[15px] sm:leading-relaxed">
-            아래 항목 중 해당되는 내용을 선택해주세요
-          </span>
-          <span className="mt-1 block text-[13px] leading-snug text-[#888] sm:mt-1.5 sm:leading-relaxed">
-            2개 이상이면 보장 점검이 필요합니다
-          </span>
-        </h2>
+    <section id="check-questions" className="bg-[#0D1B2A] px-7 py-[60px]">
+      <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
+        보장 점검
+      </p>
+      <h2 className="mb-1.5 font-sans text-[22px] font-bold leading-[1.4] text-white">
+        내 보험,
+        <br />
+        치료비까지 준비되어 있을까요?
+      </h2>
+      <p className="mb-2 text-[13px] leading-[1.7] text-white/45">
+        아래 항목 중 해당되는 내용을 선택해주세요
+      </p>
+      <span className="mb-7 inline-block rounded-[3px] border border-[rgba(201,168,76,0.25)] bg-[rgba(201,168,76,0.12)] px-3 py-1 text-[11px] tracking-[0.03em] text-[#C9A84C]">
+        2개 이상이면 보장 점검이 필요합니다
+      </span>
 
-        <div className="mt-2 space-y-2 sm:mt-2 sm:space-y-2.5">
-          {questions.map((question, index) => (
-            <button
-              key={question}
-              type="button"
-              onClick={() => handleSelect(index)}
-              className="box-border flex min-h-[56px] w-full min-w-0 items-center rounded-[12px] px-3 py-4 text-left text-[14px] transition-all sm:text-[15px]"
-              style={
+      <div className="mb-8 flex flex-col gap-2.5">
+        {questions.map((question, index) => (
+          <button
+            key={question}
+            type="button"
+            onClick={() => handleSelect(index)}
+            className={cn(
+              "flex min-h-[52px] items-center gap-3.5 rounded-md border px-[18px] py-4 text-left transition-all",
+              selectedAnswers[index]
+                ? "border-[rgba(201,168,76,0.4)] bg-[rgba(201,168,76,0.1)]"
+                : "border-white/[0.08] bg-white/[0.05] hover:border-[rgba(201,168,76,0.4)] hover:bg-[rgba(201,168,76,0.1)]",
+            )}
+          >
+            <span
+              className={cn(
+                "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-[1.5px] transition-all",
                 selectedAnswers[index]
-                  ? {
-                      border: "2px solid #E8591A",
-                      backgroundColor: "#FFF5F0",
-                      color: "#1B2A4A",
-                    }
-                  : {
-                      border: "1px solid #E8E8E8",
-                      backgroundColor: "#ffffff",
-                      color: "#333333",
-                    }
-              }
-            >
-              <div className="flex min-w-0 flex-1 items-center gap-2 md:gap-2.5">
-                <div
-                  className={cn(
-                    "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-solid transition-all sm:h-[22px] sm:w-[22px]",
-                    selectedAnswers[index]
-                      ? "border-orange-500 bg-orange-500 shadow-[0_1px_4px_rgba(249,115,22,0.25)]"
-                      : "border-gray-300 bg-transparent"
-                  )}
-                >
-                  {selectedAnswers[index] && (
-                    <svg
-                      className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <span className="line-clamp-2 min-w-0 flex-1 text-left text-[14px] leading-snug sm:text-[15px] sm:leading-relaxed">
-                  {question}
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={handleSubmit}
-          className={cn(LANDING_CTA_BUTTON_BASE, "mt-4 w-full sm:mt-4")}
-        >
-          내 보험 보장 구조 확인하기
-        </button>
+                  ? "border-[#C9A84C] bg-[#C9A84C] after:h-[9px] after:w-[5px] after:translate-x-[-1px] after:translate-y-[-1px] after:rotate-[40deg] after:border-b-2 after:border-r-2 after:border-[#0D1B2A] after:content-['']"
+                  : "border-white/25",
+              )}
+            />
+            <span className="text-[14px] leading-snug text-white/85">{question}</span>
+          </button>
+        ))}
       </div>
+
+      <button type="button" onClick={onCtaClick} className={LANDING_CTA_BUTTON_BASE}>
+        {ctaLabel}
+      </button>
     </section>
   )
 }

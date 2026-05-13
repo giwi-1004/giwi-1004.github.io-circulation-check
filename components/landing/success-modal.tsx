@@ -20,11 +20,11 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
       />
 
       <div className="relative w-full max-w-[320px] rounded-[16px] bg-white p-6 text-center shadow-xl">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#FFF0E8]">
-          <IconCircleCheck className="h-6 w-6 text-[#E8591A]" stroke={2} aria-hidden />
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EDD6]">
+          <IconCircleCheck className="h-6 w-6 text-[#C9A84C]" stroke={2} aria-hidden />
         </div>
 
-        <h3 className="mb-2 text-center text-[18px] font-bold leading-snug text-[#1B2A4A]">
+        <h3 className="mb-2 text-center text-[18px] font-bold leading-snug text-[#0D1B2A]">
           상담 신청이 완료됐습니다
         </h3>
 
@@ -36,8 +36,8 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
 
         <div className="mb-4 rounded-[10px] bg-[#F8F9FC] px-4 py-3 text-left">
           <div className="flex items-center gap-1.5">
-            <IconClock className="h-[14px] w-[14px] shrink-0 text-[#E8591A]" stroke={2} aria-hidden />
-            <span className="text-[12px] font-semibold text-[#1B2A4A]">상담 가능 시간</span>
+            <IconClock className="h-[14px] w-[14px] shrink-0 text-[#C9A84C]" stroke={2} aria-hidden />
+            <span className="text-[12px] font-semibold text-[#0D1B2A]">상담 가능 시간</span>
           </div>
           <p className="mt-1 text-[13px] text-[#444]">평일 오전 9시 ~ 오후 6시</p>
           <p className="mt-1 text-[11px] leading-relaxed text-[#888]">
@@ -56,7 +56,7 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="w-full rounded-[10px] border-none bg-[#E8591A] p-[13px] text-[15px] font-bold text-white"
+          className="w-full rounded-[10px] border-none bg-gradient-to-br from-[#C9A84C] to-[#B8922E] p-[13px] text-[15px] font-bold text-[#0D1B2A]"
         >
           확인
         </button>

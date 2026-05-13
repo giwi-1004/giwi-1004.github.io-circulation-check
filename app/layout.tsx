@@ -4,11 +4,11 @@ import { Analytics } from '@vercel/analytics/next'
 import { LandingAiJsonLd } from '@/components/landing-ai-json-ld'
 import './globals.css'
 
-const notoSansKR = Noto_Sans_KR({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-kr"
-});
+const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-noto-sans-kr',
+})
 
 export const metadata: Metadata = {
   title: '내 보험 순환계 보장 확인 | 무료 점검',
@@ -38,7 +38,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#FFFFFF',
+  themeColor: '#0D1B2A',
   viewportFit: 'cover',
 }
 

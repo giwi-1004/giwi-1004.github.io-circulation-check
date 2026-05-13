@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const faqs = [
   {
@@ -37,49 +35,40 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-[#F8F9FC] px-4 py-4 sm:px-5 sm:py-4">
-      <div className="mx-auto min-w-0 max-w-[720px]">
-        <h2 className="mb-4 text-[20px] font-semibold leading-[1.4] text-[#6B7280]">
-          자주 묻는 질문
-        </h2>
+    <section className="bg-white px-7 py-[60px]">
+      <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
+        자주 묻는 질문
+      </p>
+      <h2 className="mb-8 font-sans text-[22px] font-bold text-[#0D1B2A]">FAQ</h2>
 
-        <div className="space-y-2">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-[11px] border border-[#E5E7EB] bg-[#FFFFFF]"
-            >
+      <div>
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index
+          return (
+            <div key={faq.question} className="border-b border-black/[0.07]">
               <button
                 type="button"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between px-3.5 py-3 text-left sm:px-4 sm:py-3.5"
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="flex w-full items-center justify-between gap-3 py-[18px] text-left text-[14px] font-medium text-[#0D1B2A]"
               >
-                <span className="pr-3 text-[15px] font-medium leading-snug text-[#6B7280]">
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={cn(
-                    "h-5 w-5 shrink-0 text-[#6B7280] transition-transform",
-                    openIndex === index && "rotate-180"
-                  )}
+                {faq.question}
+                <span
+                  className="h-[18px] w-[18px] shrink-0 border-b-[1.5px] border-r-[1.5px] border-[#6B7A8D] transition-transform"
+                  style={{
+                    transform: isOpen
+                      ? "rotate(-135deg) translate(-3px, -3px)"
+                      : "rotate(45deg) translate(-3px, -3px)",
+                  }}
                 />
               </button>
-
-              <div
-                className={cn(
-                  "grid transition-all duration-200",
-                  openIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                )}
-              >
-                <div className="overflow-hidden">
-                  <p className="whitespace-pre-line px-3.5 pb-3 text-[14px] leading-relaxed text-[#6B7280] sm:px-4 sm:pb-3.5">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
+              {isOpen ? (
+                <p className="whitespace-pre-line pb-[18px] text-[13px] leading-[1.9] text-[#6B7A8D]">
+                  {faq.answer}
+                </p>
+              ) : null}
             </div>
-          ))}
-        </div>
+          )
+        })}
       </div>
     </section>
   )

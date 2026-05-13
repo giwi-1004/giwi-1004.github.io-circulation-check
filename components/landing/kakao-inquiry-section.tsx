@@ -1,29 +1,10 @@
 "use client"
 
-import Image from "next/image"
-import { CircleCheck, MessageCircle } from "lucide-react"
-import { cn } from "@/lib/utils"
-
-/** QR 이미지와 동일한 오픈채팅 링크. `NEXT_PUBLIC_KAKAO_CHAT_URL`로 덮어쓸 수 있습니다. */
 const DEFAULT_KAKAO_CHAT_URL = "https://open.kakao.com/o/scS4vMoi"
+const KAKAO_QR =
+  "https://giwi-1004-github-io-circulation-che.vercel.app/kakao-qr.png"
 
-const KAKAO_YELLOW = "#FEE500"
-const KAKAO_BROWN = "#3C1E1E"
-
-function KakaoBubbleIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={cn("shrink-0", className)}
-      fill={KAKAO_BROWN}
-      aria-hidden
-    >
-      <path d="M12 3C6.48 3 2 6.58 2 11.02c0 2.38 1.16 4.5 2.98 6.05V21l4.25-2.26c.9.25 1.86.38 2.77.38 5.52 0 10-3.58 10-8.1S17.52 3 12 3z" />
-    </svg>
-  )
-}
-
-const benefits = ["1:1 확인", "무료 확인", "빠른 답변"] as const
+const chips = ["1:1 확인", "무료 확인", "빠른 답변"] as const
 
 export function KakaoInquirySection() {
   const chatUrl =
@@ -33,83 +14,54 @@ export function KakaoInquirySection() {
   return (
     <section
       id="kakao-inquiry"
-      className="border-t border-[#E8E8E8] border-b border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 sm:px-5 sm:py-4"
+      className="border-t border-[rgba(201,168,76,0.25)] bg-[#F0EBE0] px-7 py-14"
     >
-      <div className="mx-auto min-w-0 max-w-[576px]">
-        <div className="rounded-[13px] border-2 border-[#FDE68A] bg-[#FFFBEB] px-3.5 py-3 shadow-sm sm:px-4 sm:py-4">
-          <div className="flex flex-col items-center text-center">
-            <div
-              className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full sm:mb-2 sm:h-10 sm:w-10"
-              style={{ backgroundColor: KAKAO_YELLOW }}
-            >
-              <KakaoBubbleIcon className="h-[18px] w-[18px] sm:h-5 sm:w-5" />
-            </div>
-
-            <h2 className="text-[15px] font-bold leading-snug text-[#1F2937] sm:text-[16px]">
-              카카오톡 1:1 문의
-            </h2>
-            <p className="mt-0.5 text-[11px] leading-snug text-[#6B7280] sm:mt-1 sm:text-[12px] sm:leading-relaxed">
-              전화보다 편하게
-              <br />
-              카카오톡으로 확인 가능합니다
-            </p>
-
-            <ul className="mt-2 flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:mt-3 sm:gap-x-3">
-              {benefits.map((label) => (
-                <li
-                  key={label}
-                  className="flex items-center gap-0.5 text-[11px] font-medium text-[#374151] sm:gap-1 sm:text-[12px]"
-                >
-                  <CircleCheck
-                    className="h-3 w-3 shrink-0 text-[#CA8A04] sm:h-3.5 sm:w-3.5"
-                    strokeWidth={2.5}
-                  />
-                  {label}
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-2 max-w-[320px] text-[11px] leading-relaxed text-[#6B7280] sm:mt-3 sm:text-[12px]">
-              가입 내역이 있다면
-              <br />
-              함께 보내주세요
-            </p>
-
-            <div className="mt-3 w-full rounded-[11px] border border-[#E5E7EB] bg-white px-2.5 py-2 sm:mt-3 sm:px-3 sm:py-2.5">
-              <p className="mb-1 text-[11px] font-medium text-[#6B7280] sm:text-[12px]">
-                아래 QR코드를 스캔하세요
-              </p>
-              <div className="mx-auto flex h-[118px] w-[118px] items-center justify-center rounded-lg bg-white sm:h-[122px] sm:w-[122px]">
-                <Image
-                  src="/kakao-qr.png"
-                  alt="카카오톡 오픈채팅 QR 코드"
-                  width={124}
-                  height={124}
-                  className="h-[118px] w-[118px] object-contain sm:h-[122px] sm:w-[122px]"
-                />
-              </div>
-            </div>
-
-            <a
-              href={hasValidUrl ? chatUrl : "#kakao-inquiry"}
-              target={hasValidUrl ? "_blank" : undefined}
-              rel={hasValidUrl ? "noopener noreferrer" : undefined}
-              className={cn(
-                "mt-2.5 flex min-h-[38px] w-full max-w-[320px] items-center justify-center gap-1.5 rounded-[10px] px-3 text-[12px] font-bold text-[#3C1E1E] transition-[transform,opacity] active:scale-[0.99] sm:mt-3 sm:min-h-[40px] sm:text-[13px]",
-                hasValidUrl
-                  ? "shadow-[0_2px_6px_rgba(0,0,0,0.07)] hover:opacity-95"
-                  : "cursor-not-allowed opacity-60"
-              )}
-              style={{ backgroundColor: KAKAO_YELLOW }}
-              onClick={(e) => {
-                if (!hasValidUrl) e.preventDefault()
-              }}
-            >
-              <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={2.2} />
-              카카오톡으로 간편하게 확인하기
-            </a>
-          </div>
+      <div className="rounded-[10px] border border-[rgba(254,211,2,0.5)] bg-[#FFFDE7] px-6 py-9 text-center">
+        <div className="mx-auto mb-[18px] flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#FEE500] text-2xl">
+          💬
         </div>
+        <h2 className="mb-2 font-sans text-[20px] font-bold text-[#0D1B2A]">
+          카카오톡 1:1 문의
+        </h2>
+        <p className="mb-5 text-[13px] leading-[1.8] text-[#6B7A8D]">
+          전화보다 편하게
+          <br />
+          카카오톡으로 확인 가능합니다
+        </p>
+        <div className="mb-2 flex flex-wrap justify-center gap-2">
+          {chips.map((chip) => (
+            <span
+              key={chip}
+              className="rounded-full border border-[rgba(254,211,2,0.6)] bg-[rgba(254,211,2,0.3)] px-3 py-1 text-[11px] text-[#5C4800]"
+            >
+              {chip}
+            </span>
+          ))}
+        </div>
+        <p className="my-4 text-[12px] leading-[1.7] text-[#6B7A8D]">
+          가입 내역이 있다면
+          <br />
+          함께 보내주세요
+        </p>
+        <div className="mb-6 inline-block rounded-lg border border-[rgba(254,211,2,0.4)] bg-white p-5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={KAKAO_QR} alt="카카오톡 오픈채팅 QR 코드" width={120} height={120} />
+          <p className="mt-2.5 text-[11px] tracking-[0.04em] text-[#6B7A8D]">
+            아래 QR코드를 스캔하세요
+          </p>
+        </div>
+        <a
+          href={hasValidUrl ? chatUrl : "#kakao-inquiry"}
+          target={hasValidUrl ? "_blank" : undefined}
+          rel={hasValidUrl ? "noopener noreferrer" : undefined}
+          className="flex w-full items-center justify-center gap-2 rounded bg-[#FEE500] px-4 py-4 text-[15px] font-bold text-[#3C1E00] transition-[filter] hover:brightness-95"
+          onClick={(e) => {
+            if (!hasValidUrl) e.preventDefault()
+          }}
+        >
+          <span className="text-xl">💬</span>
+          카카오톡으로 간편하게 확인하기
+        </a>
       </div>
     </section>
   )
