@@ -84,8 +84,8 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
         style={
           urgent
             ? {
-                background: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
-                boxShadow: "0 6px 20px rgba(245,158,11,0.4)",
+                background: "linear-gradient(135deg, #F6A51C 0%, #DC8117 100%)",
+                boxShadow: "0 6px 20px rgba(246,165,28,0.4)",
                 color: "#1A1A1A",
               }
             : {
