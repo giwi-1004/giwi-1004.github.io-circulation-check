@@ -33,11 +33,11 @@ export default function LandingPage() {
       <KakaoInquirySection />
       <FAQSection />
 
-      <footer className="bg-[#0A2448] px-7 py-11 text-center">
+      <footer className="footer bg-[#0A2448] px-6 py-8">
         <p className="mb-5 font-sans text-[13px] tracking-[0.06em] text-[#C9A84C]">
           순환계 치료비 보장 점검
         </p>
-        <p className="text-[11px] leading-[2] text-white/28">
+        <p className="footer-text text-left text-[11px] leading-[2] text-white/28">
           본 페이지는 보험 상담 서비스를 안내하며,
           <br />
           특정 보험 상품 가입을 권유하지 않습니다.

@@ -35,7 +35,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-white px-7 py-[60px]">
+    <section className="faq-section bg-white px-6 py-9">
       <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
         자주 묻는 질문
       </p>
@@ -49,7 +49,7 @@ export function FAQSection() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-3 py-[18px] text-left text-[14px] font-medium text-[#0D1B2A]"
+                className="faq-q flex w-full items-center justify-between gap-3 py-[13px] text-left text-[14px] font-medium text-[#0D1B2A]"
               >
                 {faq.question}
                 <span

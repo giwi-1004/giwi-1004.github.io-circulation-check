@@ -21,7 +21,7 @@ export function CompareSection() {
           <div className="compare-head-cell general border-r border-[rgba(201,168,76,0.25)] bg-[#1A4A7A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-white/60">
             일반 보험
           </div>
-          <div className="bg-[#0D1B2A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
+          <div className="compare-head-cell premium bg-[#0D1B2A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
             순환계 통합치료비
           </div>
         </div>
@@ -32,7 +32,7 @@ export function CompareSection() {
               <span className="shrink-0 text-[12px] text-[#C0392B]">✕</span>
               {row.general}
             </div>
-            <div className="compare-cell premium flex items-center gap-1.5 px-2.5 py-3 text-[12px] font-medium leading-none whitespace-nowrap text-[#0D1B2A]">
+            <div className="compare-cell premium flex items-center gap-1.5 bg-[#F0F4FA] px-2.5 py-3 text-[12px] font-medium leading-none whitespace-nowrap text-[#0D1B2A]">
               <span className="shrink-0 text-[12px] text-[#1A6B4A]">✓</span>
               {row.premium}
             </div>

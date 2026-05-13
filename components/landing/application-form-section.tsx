@@ -86,7 +86,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
 
   return (
     <section id="application-form" className="bg-[#FAF7F0] px-7 py-[60px]">
-      <div className="rounded-[10px] border border-[rgba(201,168,76,0.25)] bg-white px-6 py-8">
+      <div className="form-card rounded-[10px] border border-[rgba(201,168,76,0.25)] bg-white px-6 py-8 shadow-[0_8px_32px_rgba(15,52,96,0.15)]">
         <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
           무료 보장 점검
         </p>
@@ -170,8 +170,8 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             />
           </div>
 
-          <div className="mb-2 rounded-md bg-[#F0EBE0] p-4">
-            <div className="flex items-start gap-2.5">
+          <div className="consent-wrap mb-2 rounded-md bg-[#F0EBE0] p-3">
+            <div className="consent-row flex items-start gap-2">
               <Checkbox
                 id="privacy-consent"
                 checked={privacyAgreed}
@@ -181,12 +181,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                 }}
                 className="mt-0.5 border-[#94A3B8] data-[state=checked]:border-[#C9A84C] data-[state=checked]:bg-[#C9A84C]"
               />
-              <label htmlFor="privacy-consent" className="consent-text flex-1 text-[12px] font-medium text-[#0D1B2A]">
+              <label htmlFor="privacy-consent" className="consent-text min-w-0 flex-1 break-keep text-[12px] font-medium text-[#0D1B2A]">
                 [필수] 개인정보 수집 및 이용에 동의합니다
               </label>
               <button
                 type="button"
-                className="consent-link shrink-0 border-0 bg-transparent p-0 text-[11px] text-[#0D1B2A] underline"
+                className="consent-link shrink-0 whitespace-nowrap border-0 bg-transparent p-0 text-[11px] text-[#0D1B2A] underline"
                 onClick={() => setPrivacyDetailOpen((o) => !o)}
               >
                 [내용 보기]
@@ -215,7 +215,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
           <button
             type="submit"
             disabled={isSubmitting}
-            className={cn(LANDING_CTA_BUTTON_BASE, "disabled:opacity-50")}
+            className={cn(LANDING_CTA_BUTTON_BASE, "btn-primary px-6 py-5 text-[17px] text-[#1A1A1A]", "disabled:opacity-50")}
           >
             {isSubmitting ? "요청 중..." : "치료비 보장 구조 지금 확인하기"}
           </button>

@@ -72,7 +72,7 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
                   : "border-white/25",
               )}
             />
-            <span className="check-label text-[13px] leading-none whitespace-nowrap text-white/85">{question}</span>
+            <span className="check-label break-keep text-[13px] leading-none text-white/85">{question}</span>
           </button>
         ))}
       </div>
