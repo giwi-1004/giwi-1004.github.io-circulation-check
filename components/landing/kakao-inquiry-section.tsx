@@ -54,7 +54,7 @@ export function KakaoInquirySection() {
           href={hasValidUrl ? chatUrl : "#kakao-inquiry"}
           target={hasValidUrl ? "_blank" : undefined}
           rel={hasValidUrl ? "noopener noreferrer" : undefined}
-          className="flex w-full items-center justify-center gap-2 rounded bg-[#FEE500] px-4 py-4 text-[15px] font-bold text-[#3C1E00] transition-[filter] hover:brightness-95"
+          className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-[#FEE500] px-3 py-4 text-[14px] font-bold text-[#3C1E00] transition-[filter] hover:brightness-95"
           onClick={(e) => {
             if (!hasValidUrl) e.preventDefault()
           }}

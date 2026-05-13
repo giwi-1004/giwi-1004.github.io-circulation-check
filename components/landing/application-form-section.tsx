@@ -101,7 +101,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
           1분이면 무료로 확인됩니다
         </p>
 
-        <div className="mb-7 flex items-center gap-3.5 rounded-md border border-[rgba(201,168,76,0.3)] bg-[#F5EDD6] px-[18px] py-4">
+        <div className="expert-badge mb-7 flex items-center gap-2.5 rounded-md border border-[rgba(201,168,76,0.3)] bg-[#F5EDD6] px-3 py-3">
           <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0D1B2A]">
             <svg
               width="20"
@@ -116,11 +116,11 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               <circle cx="12" cy="7" r="4" />
             </svg>
           </div>
-          <div>
-            <strong className="block text-[13px] font-semibold text-[#0D1B2A]">
+          <div className="expert-info min-w-0 text-[12px]">
+            <strong className="block whitespace-nowrap font-semibold text-[#0D1B2A]">
               전문 보험설계사가 직접 확인합니다
             </strong>
-            <span className="text-[11px] text-[#6B7A8D]">
+            <span className="whitespace-nowrap text-[#6B7A8D]">
               보험설계사 자격 보유 &nbsp;·&nbsp; 상담 강요 없음
             </span>
           </div>

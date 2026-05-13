@@ -18,22 +18,22 @@ export function CompareSection() {
 
       <div className="overflow-hidden rounded-lg border border-[rgba(201,168,76,0.25)] bg-white">
         <div className="grid grid-cols-2">
-          <div className="border-r border-[rgba(201,168,76,0.25)] bg-[#F4F1EC] px-4 py-3.5 text-center text-[12px] font-semibold tracking-[0.03em] text-[#6B7A8D]">
+          <div className="border-r border-[rgba(201,168,76,0.25)] bg-[#F4F1EC] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#6B7A8D]">
             일반 보험
           </div>
-          <div className="bg-[#0D1B2A] px-4 py-3.5 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
+          <div className="bg-[#0D1B2A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
             순환계 통합치료비
           </div>
         </div>
 
         {rows.map((row) => (
           <div key={row.general} className="grid grid-cols-2 border-t border-black/[0.06]">
-            <div className="flex items-center gap-2 border-r border-black/[0.06] bg-[#FAFAF8] px-4 py-4 text-[13px] leading-snug text-[#6B7A8D]">
-              <span className="shrink-0 text-[13px] text-[#C0392B]">✕</span>
+            <div className="compare-cell general flex items-center gap-1.5 border-r border-black/[0.06] bg-[#FAFAF8] px-2.5 py-3 text-[12px] leading-none whitespace-nowrap text-[#6B7A8D]">
+              <span className="shrink-0 text-[12px] text-[#C0392B]">✕</span>
               {row.general}
             </div>
-            <div className="flex items-center gap-2 px-4 py-4 text-[13px] font-medium leading-snug text-[#0D1B2A]">
-              <span className="shrink-0 text-[13px] text-[#1A6B4A]">✓</span>
+            <div className="compare-cell premium flex items-center gap-1.5 px-2.5 py-3 text-[12px] font-medium leading-none whitespace-nowrap text-[#0D1B2A]">
+              <span className="shrink-0 text-[12px] text-[#1A6B4A]">✓</span>
               {row.premium}
             </div>
           </div>

@@ -58,7 +58,7 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
             type="button"
             onClick={() => handleSelect(index)}
             className={cn(
-              "flex min-h-[52px] items-center gap-3.5 rounded-md border px-[18px] py-4 text-left transition-all",
+              "flex min-h-[48px] items-center gap-2.5 rounded-md border px-3 py-3 text-left transition-all",
               selectedAnswers[index]
                 ? "border-[rgba(201,168,76,0.4)] bg-[rgba(201,168,76,0.1)]"
                 : "border-white/[0.08] bg-white/[0.05] hover:border-[rgba(201,168,76,0.4)] hover:bg-[rgba(201,168,76,0.1)]",
@@ -72,7 +72,7 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
                   : "border-white/25",
               )}
             />
-            <span className="text-[14px] leading-snug text-white/85">{question}</span>
+            <span className="check-label text-[13px] leading-none whitespace-nowrap text-white/85">{question}</span>
           </button>
         ))}
       </div>

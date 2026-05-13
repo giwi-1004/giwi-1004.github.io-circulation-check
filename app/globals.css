@@ -121,5 +121,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, p, span, a, button, label, input, textarea, strong, em {
+    font-family: inherit;
   }
 }
