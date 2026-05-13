@@ -121,7 +121,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
               전문 보험설계사가 직접 확인합니다
             </strong>
             <span className="break-keep text-[11px] text-[#6B7A8D]">
-              보험설계사 자격 보유 &nbsp;·&nbsp; 상담 강요 없음
+              상담 강요 없음
             </span>
           </div>
         </div>
