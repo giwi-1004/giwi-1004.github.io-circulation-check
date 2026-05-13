@@ -29,10 +29,10 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
   }
 
   const selectedCount = selectedAnswers.filter(Boolean).length
-  const ctaLabel =
-    selectedCount >= 2
-      ? "지금 바로 보장 구조 확인하기 →"
-      : "내 보험 보장 구조 확인하기"
+  const urgent = selectedCount >= 2
+  const ctaLabel = urgent
+    ? "⚠ 지금 바로 확인이 필요합니다 →"
+    : "내 보험 보장 구조 확인하기"
 
   return (
     <section id="check-questions" className="bg-[#0D1B2A] px-7 py-[60px]">
@@ -77,7 +77,24 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
         ))}
       </div>
 
-      <button type="button" onClick={onCtaClick} className={LANDING_CTA_BUTTON_BASE}>
+      <button
+        type="button"
+        onClick={onCtaClick}
+        className={LANDING_CTA_BUTTON_BASE}
+        style={
+          urgent
+            ? {
+                background: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+                boxShadow: "0 6px 20px rgba(245,158,11,0.4)",
+                color: "#1A1A1A",
+              }
+            : {
+                background: "",
+                boxShadow: "",
+                color: "",
+              }
+        }
+      >
         {ctaLabel}
       </button>
     </section>

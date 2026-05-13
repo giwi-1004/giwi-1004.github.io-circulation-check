@@ -101,7 +101,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
           1분이면 무료로 확인됩니다
         </p>
 
-        <div className="expert-badge mb-7 flex items-center gap-2.5 rounded-md border border-[rgba(201,168,76,0.3)] bg-[#F5EDD6] px-3 py-3">
+        <div className="expert-badge mb-7 flex items-center gap-2.5 rounded-md border border-[rgba(201,168,76,0.3)] bg-[#F5EDD6] px-3.5 py-3">
           <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0D1B2A]">
             <svg
               width="20"
@@ -117,7 +117,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             </svg>
           </div>
           <div className="expert-info min-w-0 text-[12px]">
-            <strong className="block whitespace-nowrap font-semibold text-[#0D1B2A]">
+            <strong className="block whitespace-nowrap text-[12px] font-semibold text-[#0D1B2A]">
               전문 보험설계사가 직접 확인합니다
             </strong>
             <span className="whitespace-nowrap text-[#6B7A8D]">
@@ -181,12 +181,12 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
                 }}
                 className="mt-0.5 border-[#94A3B8] data-[state=checked]:border-[#C9A84C] data-[state=checked]:bg-[#C9A84C]"
               />
-              <label htmlFor="privacy-consent" className="flex-1 text-[13px] font-medium text-[#0D1B2A]">
+              <label htmlFor="privacy-consent" className="consent-text flex-1 text-[12px] font-medium text-[#0D1B2A]">
                 [필수] 개인정보 수집 및 이용에 동의합니다
               </label>
               <button
                 type="button"
-                className="shrink-0 border-0 bg-transparent p-0 text-[12px] text-[#0D1B2A] underline"
+                className="consent-link shrink-0 border-0 bg-transparent p-0 text-[11px] text-[#0D1B2A] underline"
                 onClick={() => setPrivacyDetailOpen((o) => !o)}
               >
                 [내용 보기]

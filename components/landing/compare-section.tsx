@@ -18,7 +18,7 @@ export function CompareSection() {
 
       <div className="overflow-hidden rounded-lg border border-[rgba(201,168,76,0.25)] bg-white">
         <div className="grid grid-cols-2">
-          <div className="border-r border-[rgba(201,168,76,0.25)] bg-[#F4F1EC] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#6B7A8D]">
+          <div className="compare-head-cell general border-r border-[rgba(201,168,76,0.25)] bg-[#2E4A6B] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-white/60">
             일반 보험
           </div>
           <div className="bg-[#0D1B2A] px-3 py-3 text-center text-[12px] font-semibold tracking-[0.03em] text-[#E2C97E]">
@@ -28,7 +28,7 @@ export function CompareSection() {
 
         {rows.map((row) => (
           <div key={row.general} className="grid grid-cols-2 border-t border-black/[0.06]">
-            <div className="compare-cell general flex items-center gap-1.5 border-r border-black/[0.06] bg-[#FAFAF8] px-2.5 py-3 text-[12px] leading-none whitespace-nowrap text-[#6B7A8D]">
+            <div className="compare-cell general flex items-center gap-1.5 border-r border-black/[0.06] bg-[#D4DCE3] px-2.5 py-3 text-[12px] leading-none whitespace-nowrap text-[#1A3050]">
               <span className="shrink-0 text-[12px] text-[#C0392B]">✕</span>
               {row.general}
             </div>
