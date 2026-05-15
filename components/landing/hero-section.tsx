@@ -22,12 +22,12 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       </span>
 
       <h1 className="font-sans text-[28px] font-bold leading-[1.35] tracking-[-0.01em] text-white">
-        뇌·심장 치료비,
+        내 보험,
         <br />
         <em className="not-italic text-[#E2C97E]">
-          진단금 받고도
+          뇌·심장 치료비까지
           <br />
-          부족했다면?
+          대비됐나요?
         </em>
       </h1>
 
