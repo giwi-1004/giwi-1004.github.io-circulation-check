@@ -53,6 +53,13 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '2050356035883532');
 fbq('track', 'PageView');`
 
+const GA4_MEASUREMENT_ID = 'G-ZH7ZX0FWGV'
+
+const GA4_GTAG_SCRIPT = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA4_MEASUREMENT_ID}');`
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,6 +84,17 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Meta Pixel Code */}
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: GA4_GTAG_SCRIPT,
+          }}
+        />
+        {/* End Google tag (gtag.js) */}
       </head>
       <body
         className={`${notoSansKR.variable} min-h-dvh overflow-x-hidden font-sans antialiased`}
