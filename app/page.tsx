@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 import { ApplicationFormSection } from "@/components/landing/application-form-section"
 import { CheckQuestionsSection } from "@/components/landing/check-questions-section"
@@ -9,12 +9,77 @@ import { FAQSection } from "@/components/landing/faq-section"
 import { HeroSection } from "@/components/landing/hero-section"
 import { KakaoInquirySection } from "@/components/landing/kakao-inquiry-section"
 import { SuccessModal } from "@/components/landing/success-modal"
-import { useLandingSectionViews } from "@/hooks/use-landing-section-views"
+
+declare global {
+  interface Window {
+    gtag?: (
+      command: "event",
+      eventName: string,
+      params: { section_name: string },
+    ) => void
+  }
+}
+
+const SECTION_VIEW_TARGETS = [
+  { sectionName: "히어로" },
+  { sectionName: "보장구조비교" },
+  { sectionName: "자가체크" },
+  { sectionName: "신청폼" },
+  { sectionName: "카카오" },
+  { sectionName: "FAQ" },
+] as const
 
 export default function LandingPage() {
   const [showSuccessModal, setShowSuccessModal] = useState(false)
 
-  useLandingSectionViews()
+  const heroRef = useRef<HTMLDivElement>(null)
+  const compareRef = useRef<HTMLDivElement>(null)
+  const checkQuestionsRef = useRef<HTMLDivElement>(null)
+  const applicationFormRef = useRef<HTMLDivElement>(null)
+  const kakaoInquiryRef = useRef<HTMLDivElement>(null)
+  const faqRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const seen = new Set<string>()
+    const observers: IntersectionObserver[] = []
+
+    const targets = [
+      { ref: heroRef, sectionName: SECTION_VIEW_TARGETS[0].sectionName },
+      { ref: compareRef, sectionName: SECTION_VIEW_TARGETS[1].sectionName },
+      { ref: checkQuestionsRef, sectionName: SECTION_VIEW_TARGETS[2].sectionName },
+      { ref: applicationFormRef, sectionName: SECTION_VIEW_TARGETS[3].sectionName },
+      { ref: kakaoInquiryRef, sectionName: SECTION_VIEW_TARGETS[4].sectionName },
+      { ref: faqRef, sectionName: SECTION_VIEW_TARGETS[5].sectionName },
+    ]
+
+    for (const { ref, sectionName } of targets) {
+      const element = ref.current
+      if (!element) continue
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !seen.has(sectionName)) {
+              seen.add(sectionName)
+              window.gtag?.("event", "section_view", {
+                section_name: sectionName,
+              })
+            }
+          }
+        },
+        { threshold: 0.3 },
+      )
+
+      observer.observe(element)
+      observers.push(observer)
+    }
+
+    return () => {
+      for (const observer of observers) {
+        observer.disconnect()
+      }
+    }
+  }, [])
 
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -29,12 +94,24 @@ export default function LandingPage() {
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-[480px] overflow-x-hidden bg-[#FAF7F0]">
-      <HeroSection onCtaClick={scrollToForm} />
-      <CompareSection />
-      <CheckQuestionsSection onCtaClick={scrollToForm} />
-      <ApplicationFormSection onSubmit={() => setShowSuccessModal(true)} />
-      <KakaoInquirySection />
-      <FAQSection />
+      <div ref={heroRef}>
+        <HeroSection onCtaClick={scrollToForm} />
+      </div>
+      <div ref={compareRef}>
+        <CompareSection />
+      </div>
+      <div ref={checkQuestionsRef}>
+        <CheckQuestionsSection onCtaClick={scrollToForm} />
+      </div>
+      <div ref={applicationFormRef}>
+        <ApplicationFormSection onSubmit={() => setShowSuccessModal(true)} />
+      </div>
+      <div ref={kakaoInquiryRef}>
+        <KakaoInquirySection />
+      </div>
+      <div ref={faqRef}>
+        <FAQSection />
+      </div>
 
       <footer className="footer bg-[#0A2448] px-6 py-8">
         <p className="mb-5 font-sans text-[13px] tracking-[0.06em] text-[#C9A84C]">
