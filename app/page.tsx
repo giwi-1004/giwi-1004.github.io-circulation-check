@@ -61,6 +61,7 @@ export default function LandingPage() {
           for (const entry of entries) {
             if (entry.isIntersecting && !seen.has(sectionName)) {
               seen.add(sectionName)
+              console.log("section_view:", sectionName)
               window.gtag?.("event", "section_view", {
                 section_name: sectionName,
               })
