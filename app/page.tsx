@@ -40,6 +40,10 @@ export default function LandingPage() {
   const faqRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    console.log("useEffect 실행됨")
+    console.log("heroRef:", heroRef.current)
+    console.log("compareRef:", compareRef.current)
+
     const seen = new Set<string>()
     const observers: IntersectionObserver[] = []
 
