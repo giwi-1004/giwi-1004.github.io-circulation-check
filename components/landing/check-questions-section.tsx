@@ -32,7 +32,7 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
   const urgent = selectedCount >= 2
   const ctaLabel = urgent
     ? "⚠ 지금 바로 확인이 필요합니다 →"
-    : "내 보험 보장 구조 확인하기"
+    : "내 보험 순환계 공백 지금 확인하기"
 
   return (
     <section id="check-questions" className="bg-[#0F3460] px-7 py-[60px]">

@@ -45,7 +45,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       </p>
 
       <button type="button" onClick={onCtaClick} className={cn(LANDING_CTA_BUTTON_BASE)}>
-        내 보험 보장 구조 확인하기
+        내 보험 순환계 공백 지금 확인하기
       </button>
 
       <p className="mt-3 text-[11px] tracking-[0.05em] text-white/35">
