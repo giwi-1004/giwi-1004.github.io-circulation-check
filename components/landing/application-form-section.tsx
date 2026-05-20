@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
+import { trackCtaClick, trackFormSubmit } from "@/lib/gtag"
 import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 import { normalizeKoreanPhoneToDigits } from "@/lib/normalize-kr-phone"
 import { submitLandingLead } from "@/lib/submit-landing-lead"
@@ -35,6 +36,9 @@ const PRIVACY_CONSENT_FULL_TEXT = `개인정보 수집 및 이용 동의
 ※ 수집된 정보는 보장 확인 상담 목적 외에
 사용되지 않습니다.`
 
+const FORM_SUBMIT_CTA_LABEL = "내 보험 순환계 공백 지금 확인하기"
+const FORM_NAME = "순환계_상담신청"
+
 interface ApplicationFormSectionProps {
   onSubmit: () => void
 }
@@ -64,6 +68,8 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
       return
     }
 
+    trackCtaClick(FORM_SUBMIT_CTA_LABEL, "신청폼")
+
     setIsSubmitting(true)
     try {
       const result = await submitLandingLead(name, phone)
@@ -71,6 +77,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
         setFormError(result.message)
         return
       }
+      trackFormSubmit(FORM_NAME)
       onSubmit()
     } finally {
       setIsSubmitting(false)
@@ -217,7 +224,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             disabled={isSubmitting}
             className={cn(LANDING_CTA_BUTTON_BASE, "btn-primary px-6 py-5 text-[17px] text-[#1A1A1A]", "disabled:opacity-50")}
           >
-            {isSubmitting ? "요청 중..." : "내 보험 순환계 공백 지금 확인하기"}
+            {isSubmitting ? "요청 중..." : FORM_SUBMIT_CTA_LABEL}
           </button>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">

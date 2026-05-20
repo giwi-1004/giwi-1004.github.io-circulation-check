@@ -1,7 +1,10 @@
 "use client"
 
+import { trackCtaClick } from "@/lib/gtag"
 import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 import { cn } from "@/lib/utils"
+
+const HERO_CTA_LABEL = "내 보험 순환계 공백 지금 확인하기"
 
 interface HeroSectionProps {
   onCtaClick: () => void
@@ -12,7 +15,10 @@ const HERO_IMAGE =
 
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[#0F3460] px-7 pb-[72px] pt-[60px] text-center">
+    <section
+      id="hero"
+      className="relative overflow-hidden bg-[#0F3460] px-7 pb-[72px] pt-[60px] text-center"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[-100px] h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(201,168,76,0.1)_0%,transparent_65%)]"
@@ -44,8 +50,15 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         치료비 기준으로 보장받는 구조가 있습니다
       </p>
 
-      <button type="button" onClick={onCtaClick} className={cn(LANDING_CTA_BUTTON_BASE)}>
-        내 보험 순환계 공백 지금 확인하기
+      <button
+        type="button"
+        onClick={() => {
+          trackCtaClick(HERO_CTA_LABEL, "히어로")
+          onCtaClick()
+        }}
+        className={cn(LANDING_CTA_BUTTON_BASE)}
+      >
+        {HERO_CTA_LABEL}
       </button>
 
       <p className="mt-3 text-[11px] tracking-[0.05em] text-white/35">

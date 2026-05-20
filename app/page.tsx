@@ -9,9 +9,12 @@ import { FAQSection } from "@/components/landing/faq-section"
 import { HeroSection } from "@/components/landing/hero-section"
 import { KakaoInquirySection } from "@/components/landing/kakao-inquiry-section"
 import { SuccessModal } from "@/components/landing/success-modal"
+import { useLandingSectionViews } from "@/hooks/use-landing-section-views"
 
 export default function LandingPage() {
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+
+  useLandingSectionViews()
 
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)

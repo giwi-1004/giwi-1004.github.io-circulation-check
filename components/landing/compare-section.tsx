@@ -6,7 +6,7 @@ const rows = [
 
 export function CompareSection() {
   return (
-    <section className="bg-[#FAF7F0] px-7 py-[60px]">
+    <section id="compare" className="bg-[#FAF7F0] px-7 py-[60px]">
       <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
         보장 구조 비교
       </p>

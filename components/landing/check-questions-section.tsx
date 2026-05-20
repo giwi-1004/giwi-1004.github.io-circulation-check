@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 
+import { trackCtaClick } from "@/lib/gtag"
 import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 import { cn } from "@/lib/utils"
 
@@ -79,7 +80,10 @@ export function CheckQuestionsSection({ onCtaClick }: CheckQuestionsSectionProps
 
       <button
         type="button"
-        onClick={onCtaClick}
+        onClick={() => {
+          trackCtaClick(ctaLabel, "자가체크")
+          onCtaClick()
+        }}
         className={LANDING_CTA_BUTTON_BASE}
         style={
           urgent

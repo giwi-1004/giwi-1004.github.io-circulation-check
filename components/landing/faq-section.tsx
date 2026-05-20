@@ -35,7 +35,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="faq-section bg-white px-6 py-9">
+    <section id="faq" className="faq-section bg-white px-6 py-9">
       <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C]">
         자주 묻는 질문
       </p>

@@ -1,6 +1,9 @@
 "use client"
 
+import { trackCtaClick } from "@/lib/gtag"
+
 const DEFAULT_KAKAO_CHAT_URL = "https://open.kakao.com/o/scS4vMoi"
+const KAKAO_CTA_LABEL = "카카오톡으로 간편하게 확인하기"
 const KAKAO_QR =
   "https://giwi-1004-github-io-circulation-che.vercel.app/kakao-qr.png"
 
@@ -56,11 +59,15 @@ export function KakaoInquirySection() {
           rel={hasValidUrl ? "noopener noreferrer" : undefined}
           className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-[#FEE500] px-3 py-4 text-[14px] font-bold text-[#3C1E00] transition-[filter] hover:brightness-95"
           onClick={(e) => {
-            if (!hasValidUrl) e.preventDefault()
+            if (!hasValidUrl) {
+              e.preventDefault()
+              return
+            }
+            trackCtaClick(KAKAO_CTA_LABEL, "카카오")
           }}
         >
           <span className="text-xl">💬</span>
-          카카오톡으로 간편하게 확인하기
+          {KAKAO_CTA_LABEL}
         </a>
       </div>
     </section>
