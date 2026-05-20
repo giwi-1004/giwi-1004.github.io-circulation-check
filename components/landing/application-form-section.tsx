@@ -217,7 +217,7 @@ export function ApplicationFormSection({ onSubmit }: ApplicationFormSectionProps
             disabled={isSubmitting}
             className={cn(LANDING_CTA_BUTTON_BASE, "btn-primary px-6 py-5 text-[17px] text-[#1A1A1A]", "disabled:opacity-50")}
           >
-            {isSubmitting ? "요청 중..." : "치료비 보장 구조 지금 확인하기"}
+            {isSubmitting ? "요청 중..." : "내 보험 순환계 공백 지금 확인하기"}
           </button>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
