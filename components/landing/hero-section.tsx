@@ -4,7 +4,7 @@ import { trackCtaClick } from "@/lib/gtag"
 import { LANDING_CTA_BUTTON_BASE } from "@/lib/landing-cta"
 import { cn } from "@/lib/utils"
 
-const HERO_CTA_LABEL = "내 보험 순환계 공백 지금 확인하기"
+const HERO_CTA_LABEL = "내 보험 어디까지 보장될까?"
 
 interface HeroSectionProps {
   onCtaClick: () => void
@@ -24,17 +24,13 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         className="pointer-events-none absolute left-1/2 top-[-100px] h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(201,168,76,0.1)_0%,transparent_65%)]"
       />
       <span className="mb-7 inline-flex items-center gap-1.5 rounded-full border border-[rgba(201,168,76,0.4)] bg-[rgba(201,168,76,0.15)] px-3.5 py-1 text-[11px] font-medium tracking-[0.08em] text-[#E2C97E] before:h-1.5 before:w-1.5 before:rounded-full before:bg-[#C9A84C] before:content-['']">
-        순환계 치료비 보장 무료 점검
+        뇌·심장 치료비 보장 확인
       </span>
 
-      <h1 className="font-sans text-[28px] font-bold leading-[1.35] tracking-[-0.01em] text-white">
-        내 보험,
+      <h1 className="font-sans text-[24px] font-bold leading-[1.35] tracking-[-0.01em] text-white">
+        뇌·심장 치료,
         <br />
-        <em className="not-italic text-[#E2C97E]">
-          뇌·심장 치료비까지
-          <br />
-          대비됐나요?
-        </em>
+        한 번으로 끝나지 않을 수 있습니다
       </h1>
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,9 +41,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       />
 
       <p className="mb-8 text-[14px] leading-[1.8] text-white/55">
-        연간 한도·약관 조건 내에서
-        <br />
-        치료비 기준으로 보장받는 구조가 있습니다
+        치료 이후에도 보장은 계속 중요할 수 있습니다.
       </p>
 
       <button
