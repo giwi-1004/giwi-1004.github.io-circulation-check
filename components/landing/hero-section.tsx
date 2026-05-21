@@ -27,7 +27,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
         뇌·심장 치료비 보장 확인
       </span>
 
-      <h1 className="font-sans text-[24px] font-bold leading-[1.35] tracking-[-0.01em] text-white">
+      <h1 className="font-sans text-[20px] font-bold leading-[1.4] tracking-[-0.01em] text-white">
         뇌·심장 치료,
         <br />
         한 번으로 끝나지 않을 수 있습니다
